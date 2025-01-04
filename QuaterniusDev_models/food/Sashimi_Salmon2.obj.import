@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cdpsvgjfy81k5"
+path="res://.godot/imported/Sashimi_Salmon2.obj-646685da1dbf85a617ee5682b272caa0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Sashimi_Salmon2.obj-646685da1dbf85a617ee5682b272caa0.mesh"]
+
+source_file="res://QuaterniusDev_models/food/Sashimi_Salmon2.obj"
+dest_files=["res://.godot/imported/Sashimi_Salmon2.obj-646685da1dbf85a617ee5682b272caa0.mesh", "res://.godot/imported/Sashimi_Salmon2.obj-646685da1dbf85a617ee5682b272caa0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

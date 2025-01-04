@@ -7,7 +7,6 @@ var master_rng := RandomNumberGenerator.new()
 const MINOTAUR = preload("res://minotaur/minotaur.gd")
 const ITEM = preload("res://item/item.gd")
 const ITEM_SPAWNER = preload("res://item/item_spawner.gd")
-@onready var TM: TileMap = $TM
 @onready var GM: GridMap = $GM
 @onready var village: Node3D = $VILLAGE
 @onready var items: Node3D = $ITEMS
@@ -16,7 +15,7 @@ const STARTING_INHAB_COUNT = 3
 # maze settings
 var maze_size := Vector2i(15,15)
 var start_size := Vector2i(4,4)
-var cell_size := Vector3(6, 30, 6)
+var cell_size := Vector3(8, 6, 8)
 #var maze_size := Vector2i(25,25)
 #var start_size := Vector2i(6,6)
 #var cell_size := Vector3(2,.1,2)
@@ -58,26 +57,30 @@ func pause(unpause: bool = false): PAUSED = not unpause
 
 func new_maze():
 	remove_child(GM)
-	remove_child(TM)
+	GM.queue_free()
 	
-	var seed = master_rng.randi()
-	print("generating with seed: ", seed)
-	var biomes: Array[int] = select_biomes(seed)
-	print(biomes)
+	var generation_seed: = master_rng.randi()
 	
-	var maze = MINOTAUR.generate_four_biomes(maze_size, start_size, biomes, seed) #MINOTAUR.generate_four_corners(maze_size, start_size, balanced, seed)
+	var real_start_size: Vector2
+	if (generation_seed & ((1 << 16) - 1)) == 0xBEEF:
+		# beef seed
+		real_start_size = Vector2(2,2)
+	else: 
+		real_start_size = Vector2i(4,4)
+	
+	print("generating with seed: ", "%X" % generation_seed)
+	var biomes: Array[int] = select_biomes(generation_seed)
+	var maze = MINOTAUR.generate_four_biomes(maze_size, real_start_size, biomes, generation_seed) #MINOTAUR.generate_four_corners(maze_size, start_size, balanced, seed)
 	var descriptor = MINOTAUR.generate_descriptor(maze)
 	
-	#TM = MINOTAUR.map_to_tile(descriptor, load("res://imported_modules/LIBRARIES/default_tiles.tres"))
-	var tm = MINOTAUR.map_to_tile(descriptor, load("res://imported_modules/LIBRARIES/default_tiles.tres"))
-	GM = MINOTAUR.map_to_grid(descriptor, load("res://imported_modules/LIBRARIES/reduced_meshs_z_adjusted.tres"), true, cell_size)
+	var TM = MINOTAUR.map_to_tile(descriptor, load("res://imported_modules/LIBRARIES/default_tiles.tres"))
+	GM = MINOTAUR.map_to_grid(descriptor, load("res://QuaterniusDev_models/map_tiles/finals/quat_meshs.tres"), true, cell_size)
 	
-	add_child(TM)
-	add_child(GM)
-	
-	var total_value = ITEM_SPAWNER.spawn_items_based(GM, descriptor, biomes, seed)
-	village.init_village(tm, cell_size, STARTING_INHAB_COUNT)
+	var total_value = ITEM_SPAWNER.spawn_items_based(GM, descriptor, biomes, generation_seed)
+	print("total value generated: ", total_value)
+	village.init_village(TM, cell_size, STARTING_INHAB_COUNT)
 
+	add_child(GM)
 
 func select_biomes(seed: int = 0) -> Array[int]:
 	var rng = RandomNumberGenerator.new()

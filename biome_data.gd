@@ -64,7 +64,22 @@ const ITEM_LIST = [
 		preload("res://item/_resources/idol/idol_shape.tres"),
 		preload("res://item/_resources/idol/idol_icon.png"),
 		Vector3(0,0,30)
-	]
+	],
+	[
+		"apple",
+		preload("res://item/_resources/apple/apple.obj"),
+		preload("res://item/_resources/apple/apple_shape.tres"),
+		preload("res://item/_resources/apple/apple_icon.png"),
+		Vector3(10,1,0)
+	],
+	[
+		"golden_apple",
+		preload("res://item/_resources/apple/golden_apple.obj"),
+		preload("res://item/_resources/apple/apple_shape.tres"),
+		preload("res://item/_resources/apple/golden_apple_icon.png"),
+		Vector3(100,10,0)
+	],
+	
 ]
 
 static func get_item_name(item_index: int) -> String: return ITEM_LIST[item_index][ITEM_FIELDS.NAME]

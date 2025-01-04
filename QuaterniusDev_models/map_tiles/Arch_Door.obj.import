@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cqc745juuw36l"
+path="res://.godot/imported/Arch_Door.obj-22f9055e6c7c5d2c08ed9b7482b3b035.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Arch_Door.obj-22f9055e6c7c5d2c08ed9b7482b3b035.mesh"]
+
+source_file="res://QuaterniusDev_models/map_tiles/Arch_Door.obj"
+dest_files=["res://.godot/imported/Arch_Door.obj-22f9055e6c7c5d2c08ed9b7482b3b035.mesh", "res://.godot/imported/Arch_Door.obj-22f9055e6c7c5d2c08ed9b7482b3b035.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

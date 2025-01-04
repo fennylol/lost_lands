@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://r78q6l0la7d2"
+path="res://.godot/imported/Torch.obj-5c424cb0a1e0107deb10a63067ea6066.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Torch.obj-5c424cb0a1e0107deb10a63067ea6066.mesh"]
+
+source_file="res://QuaterniusDev_models/map_tiles/Torch.obj"
+dest_files=["res://.godot/imported/Torch.obj-5c424cb0a1e0107deb10a63067ea6066.mesh", "res://.godot/imported/Torch.obj-5c424cb0a1e0107deb10a63067ea6066.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

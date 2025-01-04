@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cv7tp2ionak5p"
+path="res://.godot/imported/Coin_Pile.obj-c5c954ff2886ffdf0f514e07b156aa86.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Coin_Pile.obj-c5c954ff2886ffdf0f514e07b156aa86.mesh"]
+
+source_file="res://QuaterniusDev_models/map_tiles/Coin_Pile.obj"
+dest_files=["res://.godot/imported/Coin_Pile.obj-c5c954ff2886ffdf0f514e07b156aa86.mesh", "res://.godot/imported/Coin_Pile.obj-c5c954ff2886ffdf0f514e07b156aa86.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

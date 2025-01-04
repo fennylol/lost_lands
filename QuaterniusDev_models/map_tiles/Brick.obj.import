@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://drfqh3vioueun"
+path="res://.godot/imported/Brick.obj-cbd7ebbe10db212180e94425d7e2d2dc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Brick.obj-cbd7ebbe10db212180e94425d7e2d2dc.mesh"]
+
+source_file="res://QuaterniusDev_models/map_tiles/Brick.obj"
+dest_files=["res://.godot/imported/Brick.obj-cbd7ebbe10db212180e94425d7e2d2dc.mesh", "res://.godot/imported/Brick.obj-cbd7ebbe10db212180e94425d7e2d2dc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

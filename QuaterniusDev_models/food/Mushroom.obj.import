@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ca6tprtmtkelj"
+path="res://.godot/imported/Mushroom.obj-a32326f8327d1a0bf9a7e98ff37b8e9f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Mushroom.obj-a32326f8327d1a0bf9a7e98ff37b8e9f.mesh"]
+
+source_file="res://QuaterniusDev_models/food/Mushroom.obj"
+dest_files=["res://.godot/imported/Mushroom.obj-a32326f8327d1a0bf9a7e98ff37b8e9f.mesh", "res://.godot/imported/Mushroom.obj-a32326f8327d1a0bf9a7e98ff37b8e9f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

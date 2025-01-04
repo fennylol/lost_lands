@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ckb7rugfecd35"
+path="res://.godot/imported/Skull.obj-e2b3634487e30f9edfcd7d228c0a9baa.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Skull.obj-e2b3634487e30f9edfcd7d228c0a9baa.mesh"]
+
+source_file="res://QuaterniusDev_models/map_tiles/Skull.obj"
+dest_files=["res://.godot/imported/Skull.obj-e2b3634487e30f9edfcd7d228c0a9baa.mesh", "res://.godot/imported/Skull.obj-e2b3634487e30f9edfcd7d228c0a9baa.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

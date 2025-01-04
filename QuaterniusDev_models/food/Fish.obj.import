@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dldf2vi8436ci"
+path="res://.godot/imported/Fish.obj-bcaaa74f961d07a66005826d7963dc6d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Fish.obj-bcaaa74f961d07a66005826d7963dc6d.mesh"]
+
+source_file="res://QuaterniusDev_models/food/Fish.obj"
+dest_files=["res://.godot/imported/Fish.obj-bcaaa74f961d07a66005826d7963dc6d.mesh", "res://.godot/imported/Fish.obj-bcaaa74f961d07a66005826d7963dc6d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

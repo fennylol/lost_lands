@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://3w8sobwwr0jx"
+path="res://.godot/imported/Spoon.obj-dddb367dd5e90dac0bbc4a03c3ff9998.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Spoon.obj-dddb367dd5e90dac0bbc4a03c3ff9998.mesh"]
+
+source_file="res://QuaterniusDev_models/food/Spoon.obj"
+dest_files=["res://.godot/imported/Spoon.obj-dddb367dd5e90dac0bbc4a03c3ff9998.mesh", "res://.godot/imported/Spoon.obj-dddb367dd5e90dac0bbc4a03c3ff9998.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

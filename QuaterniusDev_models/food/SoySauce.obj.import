@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://be0ste6aip8k8"
+path="res://.godot/imported/SoySauce.obj-7a19b4a22eacd8bd5ceacb6cd5daeb27.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SoySauce.obj-7a19b4a22eacd8bd5ceacb6cd5daeb27.mesh"]
+
+source_file="res://QuaterniusDev_models/food/SoySauce.obj"
+dest_files=["res://.godot/imported/SoySauce.obj-7a19b4a22eacd8bd5ceacb6cd5daeb27.mesh", "res://.godot/imported/SoySauce.obj-7a19b4a22eacd8bd5ceacb6cd5daeb27.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

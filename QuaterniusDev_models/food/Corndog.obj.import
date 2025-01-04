@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cerqgr5ullabb"
+path="res://.godot/imported/Corndog.obj-35b560dbeff98f5edd26d6b9e726b09e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Corndog.obj-35b560dbeff98f5edd26d6b9e726b09e.mesh"]
+
+source_file="res://QuaterniusDev_models/food/Corndog.obj"
+dest_files=["res://.godot/imported/Corndog.obj-35b560dbeff98f5edd26d6b9e726b09e.mesh", "res://.godot/imported/Corndog.obj-35b560dbeff98f5edd26d6b9e726b09e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

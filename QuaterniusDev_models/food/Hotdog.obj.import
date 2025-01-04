@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://viveg45o7kah"
+path="res://.godot/imported/Hotdog.obj-e495042e5634d88a6ff990310151fbd6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Hotdog.obj-e495042e5634d88a6ff990310151fbd6.mesh"]
+
+source_file="res://QuaterniusDev_models/food/Hotdog.obj"
+dest_files=["res://.godot/imported/Hotdog.obj-e495042e5634d88a6ff990310151fbd6.mesh", "res://.godot/imported/Hotdog.obj-e495042e5634d88a6ff990310151fbd6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

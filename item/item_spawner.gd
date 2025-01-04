@@ -1,7 +1,7 @@
 const ITEM = preload("res://item/item.gd")
 const BIOME_DATA = preload("res://biome_data.gd")
 const ITEM_LIST = BIOME_DATA.ITEM_LIST
-const SPAWN_RATE_VARIENCE: float = 0.15
+const VALUE_VARIENCE: float = 0.15
 const LOOT_POTENTIAL_VARIENCE: float = 0.33
 
 
@@ -48,7 +48,14 @@ static func spawn_items_based(gm: GridMap, map_descriptor: Array, biomes: Array,
 					# select item and create
 					var item_list = BIOME_DATA.get_biome_items(biomes[quad_idx])
 					var item_idx = rng.randi_range(0,item_list.size()-1)
-					var new_item = ITEM.create_item_from_array(item_list[item_idx])
+					var item_data = item_list[item_idx].duplicate()
+					# randomize values slightly
+					item_data[ITEM.ITEM_FIELDS.VALUES] *= Vector3(
+						rng.randf_range((1-VALUE_VARIENCE), (1+VALUE_VARIENCE)),
+						rng.randf_range((1-VALUE_VARIENCE), (1+VALUE_VARIENCE)),
+						rng.randf_range((1-VALUE_VARIENCE), (1+VALUE_VARIENCE))
+					)
+					var new_item = ITEM.create_item_from_array(item_data)
 					
 					# position item, add to map and lower loot potential
 					new_item.position = gm.map_to_local(Vector3(pos.x,0,pos.y))

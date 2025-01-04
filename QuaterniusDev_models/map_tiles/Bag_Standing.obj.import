@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dfgrgfmy2ac16"
+path="res://.godot/imported/Bag_Standing.obj-24d5f90abbb44d8316f0b1dc5c80a0dd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Bag_Standing.obj-24d5f90abbb44d8316f0b1dc5c80a0dd.mesh"]
+
+source_file="res://QuaterniusDev_models/map_tiles/Bag_Standing.obj"
+dest_files=["res://.godot/imported/Bag_Standing.obj-24d5f90abbb44d8316f0b1dc5c80a0dd.mesh", "res://.godot/imported/Bag_Standing.obj-24d5f90abbb44d8316f0b1dc5c80a0dd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

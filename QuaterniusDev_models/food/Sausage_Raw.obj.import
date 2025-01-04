@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dlyncoker6dva"
+path="res://.godot/imported/Sausage_Raw.obj-aa3468c21092d0b3fff0209e2cbce0bf.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Sausage_Raw.obj-aa3468c21092d0b3fff0209e2cbce0bf.mesh"]
+
+source_file="res://QuaterniusDev_models/food/Sausage_Raw.obj"
+dest_files=["res://.godot/imported/Sausage_Raw.obj-aa3468c21092d0b3fff0209e2cbce0bf.mesh", "res://.godot/imported/Sausage_Raw.obj-aa3468c21092d0b3fff0209e2cbce0bf.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

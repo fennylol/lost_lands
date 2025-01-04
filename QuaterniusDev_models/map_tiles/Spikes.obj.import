@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://fgmygp1w84xd"
+path="res://.godot/imported/Spikes.obj-fad80dc593b00c12434e50fdebd7c700.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Spikes.obj-fad80dc593b00c12434e50fdebd7c700.mesh"]
+
+source_file="res://QuaterniusDev_models/map_tiles/Spikes.obj"
+dest_files=["res://.godot/imported/Spikes.obj-fad80dc593b00c12434e50fdebd7c700.mesh", "res://.godot/imported/Spikes.obj-fad80dc593b00c12434e50fdebd7c700.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c8cwedy43debf"
+path="res://.godot/imported/Bucket.obj-7907995b1d2e0a69bcfd036b0edf5277.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Bucket.obj-7907995b1d2e0a69bcfd036b0edf5277.mesh"]
+
+source_file="res://QuaterniusDev_models/map_tiles/Bucket.obj"
+dest_files=["res://.godot/imported/Bucket.obj-7907995b1d2e0a69bcfd036b0edf5277.mesh", "res://.godot/imported/Bucket.obj-7907995b1d2e0a69bcfd036b0edf5277.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

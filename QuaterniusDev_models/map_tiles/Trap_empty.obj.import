@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://qcii0ii26vy"
+path="res://.godot/imported/Trap_empty.obj-d6cd6c74dc1c89afe74cfcc4792cf633.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Trap_empty.obj-d6cd6c74dc1c89afe74cfcc4792cf633.mesh"]
+
+source_file="res://QuaterniusDev_models/map_tiles/Trap_empty.obj"
+dest_files=["res://.godot/imported/Trap_empty.obj-d6cd6c74dc1c89afe74cfcc4792cf633.mesh", "res://.godot/imported/Trap_empty.obj-d6cd6c74dc1c89afe74cfcc4792cf633.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

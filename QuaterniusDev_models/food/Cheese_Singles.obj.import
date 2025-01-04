@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b1ayxvwa766cw"
+path="res://.godot/imported/Cheese_Singles.obj-d4a30848fe945a596d96a164195c144c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Cheese_Singles.obj-d4a30848fe945a596d96a164195c144c.mesh"]
+
+source_file="res://QuaterniusDev_models/food/Cheese_Singles.obj"
+dest_files=["res://.godot/imported/Cheese_Singles.obj-d4a30848fe945a596d96a164195c144c.mesh", "res://.godot/imported/Cheese_Singles.obj-d4a30848fe945a596d96a164195c144c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

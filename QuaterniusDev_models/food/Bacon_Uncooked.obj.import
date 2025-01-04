@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://rijjsle2ke6d"
+path="res://.godot/imported/Bacon_Uncooked.obj-9451635104b6fa3b8cf02660d62603ea.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Bacon_Uncooked.obj-9451635104b6fa3b8cf02660d62603ea.mesh"]
+
+source_file="res://QuaterniusDev_models/food/Bacon_Uncooked.obj"
+dest_files=["res://.godot/imported/Bacon_Uncooked.obj-9451635104b6fa3b8cf02660d62603ea.mesh", "res://.godot/imported/Bacon_Uncooked.obj-9451635104b6fa3b8cf02660d62603ea.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

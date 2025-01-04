@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bvroofr4mx1qy"
+path="res://.godot/imported/Sushi_Roll2.obj-79268c7a83fa2fe62829b0652d0cceeb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Sushi_Roll2.obj-79268c7a83fa2fe62829b0652d0cceeb.mesh"]
+
+source_file="res://QuaterniusDev_models/food/Sushi_Roll2.obj"
+dest_files=["res://.godot/imported/Sushi_Roll2.obj-79268c7a83fa2fe62829b0652d0cceeb.mesh", "res://.godot/imported/Sushi_Roll2.obj-79268c7a83fa2fe62829b0652d0cceeb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

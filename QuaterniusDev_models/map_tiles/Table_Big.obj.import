@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bm21amrbb1yyg"
+path="res://.godot/imported/Table_Big.obj-1828656bdf14337e313f55b34339367e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Table_Big.obj-1828656bdf14337e313f55b34339367e.mesh"]
+
+source_file="res://QuaterniusDev_models/map_tiles/Table_Big.obj"
+dest_files=["res://.godot/imported/Table_Big.obj-1828656bdf14337e313f55b34339367e.mesh", "res://.godot/imported/Table_Big.obj-1828656bdf14337e313f55b34339367e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,14 +1,14 @@
 extends CharacterBody3D
 
 const SPEED = 5.0
-const SPRINT_SPEED = 15
+const SPRINT_SPEED = 15.0
 const JUMP_VELOCITY = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-const InhabGui = preload("res://inhabitant/full_gui/full_inhab_gui.gd")#preload("res://inhabitant/inhab_gui.gd")
+const InhabGui = preload("res://inhabitant/inhab_gui/inhab_gui.gd")
 @onready var camera: Camera3D = $DEBUG_CAMERA
 @onready var hands: Area3D = $DEBUG_CAMERA/HANDS
-@onready var GUI: InhabGui = $DEBUG_CAMERA/FULLINHABGUI#$DEBUG_CAMERA/INHABGUI
+@onready var GUI: InhabGui = $DEBUG_CAMERA/INHABGUI
 
 const MAX_HEALTH: float = 100
 var health: float = MAX_HEALTH
@@ -22,9 +22,6 @@ var active_slot: int = 0
 # ╭-----------╮
 # |   items   |
 # ╰-----------╯
-func show_gui(show: bool = true):
-	GUI.visible = show
-
 func remove_item(slot: int) -> Node:
 	var item = inventory[slot]
 	inventory[slot] = null
@@ -38,8 +35,7 @@ func drop_item(slot: int = active_slot):
 	var item = remove_item(slot)
 	if item: 
 		get_tree().root.add_child(item)
-		item.position = global_position
-	print("dropping slot ", slot)
+		item.position = global_position * Vector3(1,0,1)
 
 
 func interact():
@@ -122,11 +118,15 @@ func set_health(val: float):
 # ╰------------╯
 func init_gui(map, cell_size):
 	show_gui(false)
-	GUI.set_minimap(await GUI.tilemap_to_image(map), cell_size)
+	GUI.set_minimap(await GUI.tilemap_to_image(map, true), cell_size)
 	GUI.update_minimap_display(0)
 
+# gui passthroughs
 func process_world_tick(time: Vector4i): GUI.rotate_clock(time)
-func show_minimap(show: bool = true): GUI.show_minimap(show)
-func show_markers(show: bool = true): GUI.show_markers(show)
-func show_compass(show: bool = true): GUI.show_compass(show)
-func show_clock(show: bool = true): GUI.show_clock(show)
+func new_player_color(): GUI.new_player_color()
+func show_gui(show_gui: bool = true): GUI.visible = show_gui
+func show_minimap(show_on_gui: bool = true): GUI.show_minimap(show_on_gui)
+func show_markers(show_on_gui: bool = true): GUI.show_markers(show_on_gui)
+func show_compass(show_on_gui: bool = true): GUI.show_compass(show_on_gui)
+func show_clock(show_on_gui: bool = true): GUI.show_clock(show_on_gui)
+func get_markers() -> bool: return GUI.markers

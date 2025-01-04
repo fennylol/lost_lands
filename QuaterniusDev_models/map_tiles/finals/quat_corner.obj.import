@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://qobnb85feiou"
+path="res://.godot/imported/quat_corner.obj-9e02e6e20843f79afe7269ced8bffb85.mesh"
+
+[deps]
+
+files=["res://.godot/imported/quat_corner.obj-9e02e6e20843f79afe7269ced8bffb85.mesh"]
+
+source_file="res://QuaterniusDev_models/map_tiles/finals/quat_corner.obj"
+dest_files=["res://.godot/imported/quat_corner.obj-9e02e6e20843f79afe7269ced8bffb85.mesh", "res://.godot/imported/quat_corner.obj-9e02e6e20843f79afe7269ced8bffb85.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

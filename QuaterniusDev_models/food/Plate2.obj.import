@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ddbqdy5a88ckh"
+path="res://.godot/imported/Plate2.obj-658e9b6b5e8c8bd509763349bdbfd504.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Plate2.obj-658e9b6b5e8c8bd509763349bdbfd504.mesh"]
+
+source_file="res://QuaterniusDev_models/food/Plate2.obj"
+dest_files=["res://.godot/imported/Plate2.obj-658e9b6b5e8c8bd509763349bdbfd504.mesh", "res://.godot/imported/Plate2.obj-658e9b6b5e8c8bd509763349bdbfd504.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

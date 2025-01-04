@@ -10,9 +10,9 @@ static func generate_four_corners(corner_size: Vector2i, center_size: Vector2i, 
 	if corner_size.x < 1 or corner_size.y < 1: 
 		printerr("ERROR generate_four_corners(): maze must be minimum 1x1")
 		return []
-	if center_size.x < 4 or center_size.y < 4:
-		printerr("ERROR generate_four_corners(): center must be minimum 4x4. continuing...")
-		return []
+	#if center_size.x < 4 or center_size.y < 4:
+		#printerr("ERROR generate_four_corners(): center must be minimum 4x4. continuing...")
+		#return []
 	
 	# create random number generator with provided or random generation_seed
 	var rng := RandomNumberGenerator.new()
@@ -71,13 +71,13 @@ static func generate_four_corners(corner_size: Vector2i, center_size: Vector2i, 
 
 static func generate_four_biomes(corner_size: Vector2i, center_size: Vector2i, biomes: Array[int], generation_seed: int = 0):
 	if corner_size.x < 1 or corner_size.y < 1: 
-		printerr("ERROR generate_four_corners(): maze must be minimum 1x1")
+		printerr("ERROR generate_four_biomes(): maze must be minimum 1x1")
 		return []
-	if center_size.x < 4 or center_size.y < 4:
-		printerr("ERROR generate_four_corners(): center must be minimum 4x4.")
-		return []
+	#if center_size.x < 4 or center_size.y < 4:
+		#printerr("ERROR generate_four_biomes(): center must be minimum 4x4.")
+		#return []
 	if biomes.size() != 4: 
-		printerr("ERROR generate_four_corners(): must be exactly 4 biomes.")
+		printerr("ERROR generate_four_biomes(): must be exactly 4 biomes.")
 		return []
 	
 	# create random number generator with provided or random generation_seed
@@ -214,7 +214,7 @@ static func generate_points(size: Vector2i) -> Array:
 
 
 static func generate_points_inverted(size: Vector2i) -> Array:
-	var map : Array
+	var map : Array = []
 	
 	var row = []
 	row.resize((size.x*2)+1)

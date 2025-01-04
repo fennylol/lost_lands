@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bpwagrijtpskk"
+path="res://.godot/imported/Fence_Straight_Modular.obj-ce7bda87fc45c4660ba6ef41fcbbe947.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Fence_Straight_Modular.obj-ce7bda87fc45c4660ba6ef41fcbbe947.mesh"]
+
+source_file="res://QuaterniusDev_models/map_tiles/Fence_Straight_Modular.obj"
+dest_files=["res://.godot/imported/Fence_Straight_Modular.obj-ce7bda87fc45c4660ba6ef41fcbbe947.mesh", "res://.godot/imported/Fence_Straight_Modular.obj-ce7bda87fc45c4660ba6ef41fcbbe947.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

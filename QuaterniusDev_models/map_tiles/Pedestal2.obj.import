@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://rnr1al8buppo"
+path="res://.godot/imported/Pedestal2.obj-17b5572c4a2924f9ac2c30e26dfe5375.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Pedestal2.obj-17b5572c4a2924f9ac2c30e26dfe5375.mesh"]
+
+source_file="res://QuaterniusDev_models/map_tiles/Pedestal2.obj"
+dest_files=["res://.godot/imported/Pedestal2.obj-17b5572c4a2924f9ac2c30e26dfe5375.mesh", "res://.godot/imported/Pedestal2.obj-17b5572c4a2924f9ac2c30e26dfe5375.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

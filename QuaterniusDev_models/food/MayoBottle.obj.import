@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://k5qhcq7scv18"
+path="res://.godot/imported/MayoBottle.obj-a29980bd1b46ab79ac5dc13e1c098850.mesh"
+
+[deps]
+
+files=["res://.godot/imported/MayoBottle.obj-a29980bd1b46ab79ac5dc13e1c098850.mesh"]
+
+source_file="res://QuaterniusDev_models/food/MayoBottle.obj"
+dest_files=["res://.godot/imported/MayoBottle.obj-a29980bd1b46ab79ac5dc13e1c098850.mesh", "res://.godot/imported/MayoBottle.obj-a29980bd1b46ab79ac5dc13e1c098850.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

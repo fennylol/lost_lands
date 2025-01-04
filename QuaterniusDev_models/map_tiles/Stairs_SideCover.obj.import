@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cob2cxtpa7uhx"
+path="res://.godot/imported/Stairs_SideCover.obj-5bff42c8dbd36377be52384fdd2aa5af.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Stairs_SideCover.obj-5bff42c8dbd36377be52384fdd2aa5af.mesh"]
+
+source_file="res://QuaterniusDev_models/map_tiles/Stairs_SideCover.obj"
+dest_files=["res://.godot/imported/Stairs_SideCover.obj-5bff42c8dbd36377be52384fdd2aa5af.mesh", "res://.godot/imported/Stairs_SideCover.obj-5bff42c8dbd36377be52384fdd2aa5af.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -8,7 +8,7 @@ const INHAB = preload("res://inhabitant/inhabitant.tscn")
 var inhabitant_count: int = 0
 var mouse_captured: bool = false
 
-const DEFAULT_RESOURCE_COUNTS := Vector3(11,11,0)
+const DEFAULT_RESOURCE_COUNTS := Vector3(1100,1100,0)#Vector3(11,11,0)
 const DEFAULT_RESOURCE_DECAY_RATES := Vector3(0.0166, 0.0166, 0)
 const DEFAULT_INHABITANT_MULTIPLIER: float = 1
 
@@ -56,6 +56,10 @@ func init_village(map, cell_size, spawn_count: int = 3):
 	resource_counts = DEFAULT_RESOURCE_COUNTS
 	gui.set_values(resource_counts)
 	#if !dropzone.body_entered.is_connected(drop_items): dropzone.body_entered.connect(drop_items)
+	var new_trip = func(body):
+		if !body.is_in_group("inhabitant"): return
+		if body.get_markers(): body.new_player_color()
+	if !dropzone.body_entered.is_connected(new_trip): dropzone.body_entered.connect(new_trip)
 
 
 func handle_loss():
@@ -118,7 +122,10 @@ func _physics_process(delta):
 	if inhabitants.get_child_count():
 		inhabitants.get_child(0).move_inhabitant(input_dir, jump, sprint, delta)
 
-
+var show_minimap: bool = false
+var show_markers: bool = false
+var show_compass: bool = false
+var show_clock: bool = false
 # mouse capture
 func _process(delta):
 	if Input.is_action_just_pressed("capture_mouse") or \
@@ -135,6 +142,20 @@ func _process(delta):
 			inhabitants.get_child(0).scroll()
 		elif Input.is_action_just_pressed("scroll_up"):
 			inhabitants.get_child(0).scroll(true)
+		
+		if Input.is_action_pressed("drop_item"):
+			if Input.is_action_just_pressed("left"): 
+				show_minimap = !show_minimap
+				inhabitants.get_child(0).show_minimap(show_minimap)
+			if Input.is_action_just_pressed("up"): 
+				show_markers = !show_markers
+				inhabitants.get_child(0).show_markers(show_markers)
+			if Input.is_action_just_pressed("right"): 
+				show_compass = !show_compass
+				inhabitants.get_child(0).show_compass(show_compass)
+			if Input.is_action_just_pressed("down"): 
+				show_clock = !show_clock
+				inhabitants.get_child(0).show_clock(show_clock)
 
 
 func spawn_inhabitant(inhabitant_name: String = "krug") -> CharacterBody3D:

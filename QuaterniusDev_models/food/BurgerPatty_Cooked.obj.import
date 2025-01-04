@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://q1ox65v7uka7"
+path="res://.godot/imported/BurgerPatty_Cooked.obj-7199ae2fd00b54cc9edbf93a398a2fa6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/BurgerPatty_Cooked.obj-7199ae2fd00b54cc9edbf93a398a2fa6.mesh"]
+
+source_file="res://QuaterniusDev_models/food/BurgerPatty_Cooked.obj"
+dest_files=["res://.godot/imported/BurgerPatty_Cooked.obj-7199ae2fd00b54cc9edbf93a398a2fa6.mesh", "res://.godot/imported/BurgerPatty_Cooked.obj-7199ae2fd00b54cc9edbf93a398a2fa6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

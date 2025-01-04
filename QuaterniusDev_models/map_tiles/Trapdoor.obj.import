@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d2o46vs58sovw"
+path="res://.godot/imported/Trapdoor.obj-219d378152e99ceb0ab1ae7bb5603fbb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Trapdoor.obj-219d378152e99ceb0ab1ae7bb5603fbb.mesh"]
+
+source_file="res://QuaterniusDev_models/map_tiles/Trapdoor.obj"
+dest_files=["res://.godot/imported/Trapdoor.obj-219d378152e99ceb0ab1ae7bb5603fbb.mesh", "res://.godot/imported/Trapdoor.obj-219d378152e99ceb0ab1ae7bb5603fbb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

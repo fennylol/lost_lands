@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bqehtlhyiy2ys"
+path="res://.godot/imported/Floor_BricksSeparate.obj-acd3afec050a22d1e1d23aff05272263.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Floor_BricksSeparate.obj-acd3afec050a22d1e1d23aff05272263.mesh"]
+
+source_file="res://QuaterniusDev_models/map_tiles/Floor_BricksSeparate.obj"
+dest_files=["res://.godot/imported/Floor_BricksSeparate.obj-acd3afec050a22d1e1d23aff05272263.mesh", "res://.godot/imported/Floor_BricksSeparate.obj-acd3afec050a22d1e1d23aff05272263.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

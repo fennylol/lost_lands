@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://crp2lf0ufs0r5"
+path="res://.godot/imported/Pancakes_Stack.obj-4f89982f668349bef7c9ed095226f512.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Pancakes_Stack.obj-4f89982f668349bef7c9ed095226f512.mesh"]
+
+source_file="res://QuaterniusDev_models/food/Pancakes_Stack.obj"
+dest_files=["res://.godot/imported/Pancakes_Stack.obj-4f89982f668349bef7c9ed095226f512.mesh", "res://.godot/imported/Pancakes_Stack.obj-4f89982f668349bef7c9ed095226f512.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

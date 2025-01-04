@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c4i1t2fyfgstq"
+path="res://.godot/imported/IceCream_4.obj-a7e0a6a5a0df3a358827c51c1bcc1cdd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/IceCream_4.obj-a7e0a6a5a0df3a358827c51c1bcc1cdd.mesh"]
+
+source_file="res://QuaterniusDev_models/food/IceCream_4.obj"
+dest_files=["res://.godot/imported/IceCream_4.obj-a7e0a6a5a0df3a358827c51c1bcc1cdd.mesh", "res://.godot/imported/IceCream_4.obj-a7e0a6a5a0df3a358827c51c1bcc1cdd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

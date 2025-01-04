@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c63x48wftfplx"
+path="res://.godot/imported/Arch.obj-e4033301d07debec35fad9b553df03df.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Arch.obj-e4033301d07debec35fad9b553df03df.mesh"]
+
+source_file="res://QuaterniusDev_models/map_tiles/Arch.obj"
+dest_files=["res://.godot/imported/Arch.obj-e4033301d07debec35fad9b553df03df.mesh", "res://.godot/imported/Arch.obj-e4033301d07debec35fad9b553df03df.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dnotlchfauk7d"
+path="res://.godot/imported/Donut3.obj-6baf99ef4f7c030da72dbba5054c97ad.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Donut3.obj-6baf99ef4f7c030da72dbba5054c97ad.mesh"]
+
+source_file="res://QuaterniusDev_models/food/Donut3.obj"
+dest_files=["res://.godot/imported/Donut3.obj-6baf99ef4f7c030da72dbba5054c97ad.mesh", "res://.godot/imported/Donut3.obj-6baf99ef4f7c030da72dbba5054c97ad.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

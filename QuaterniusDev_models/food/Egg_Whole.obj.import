@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bl86lqla51c1u"
+path="res://.godot/imported/Egg_Whole.obj-497547b4948fb7d7574865636ccebdad.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Egg_Whole.obj-497547b4948fb7d7574865636ccebdad.mesh"]
+
+source_file="res://QuaterniusDev_models/food/Egg_Whole.obj"
+dest_files=["res://.godot/imported/Egg_Whole.obj-497547b4948fb7d7574865636ccebdad.mesh", "res://.godot/imported/Egg_Whole.obj-497547b4948fb7d7574865636ccebdad.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

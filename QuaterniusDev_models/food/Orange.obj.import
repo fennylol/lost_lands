@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bpnng0hsqb45w"
+path="res://.godot/imported/Orange.obj-121e0d7dd4b5eed537a2aa4f0c746cb1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Orange.obj-121e0d7dd4b5eed537a2aa4f0c746cb1.mesh"]
+
+source_file="res://QuaterniusDev_models/food/Orange.obj"
+dest_files=["res://.godot/imported/Orange.obj-121e0d7dd4b5eed537a2aa4f0c746cb1.mesh", "res://.godot/imported/Orange.obj-121e0d7dd4b5eed537a2aa4f0c746cb1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

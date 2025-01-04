@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://014yqvna2m0r"
+path="res://.godot/imported/Sausage_Cooked.obj-c01fa55c693e9693ec115e1cee00bead.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Sausage_Cooked.obj-c01fa55c693e9693ec115e1cee00bead.mesh"]
+
+source_file="res://QuaterniusDev_models/food/Sausage_Cooked.obj"
+dest_files=["res://.godot/imported/Sausage_Cooked.obj-c01fa55c693e9693ec115e1cee00bead.mesh", "res://.godot/imported/Sausage_Cooked.obj-c01fa55c693e9693ec115e1cee00bead.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

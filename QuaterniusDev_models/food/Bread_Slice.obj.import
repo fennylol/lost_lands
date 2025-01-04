@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://btc6es5rptcl6"
+path="res://.godot/imported/Bread_Slice.obj-a8065d491d6835590f4b932c1629d6d7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Bread_Slice.obj-a8065d491d6835590f4b932c1629d6d7.mesh"]
+
+source_file="res://QuaterniusDev_models/food/Bread_Slice.obj"
+dest_files=["res://.godot/imported/Bread_Slice.obj-a8065d491d6835590f4b932c1629d6d7.mesh", "res://.godot/imported/Bread_Slice.obj-a8065d491d6835590f4b932c1629d6d7.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
