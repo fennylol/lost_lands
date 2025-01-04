@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bx0b3iqchf1py"
+path="res://.godot/imported/z_corner.obj-08f43bc10ad53e218574c467c59a433e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/z_corner.obj-08f43bc10ad53e218574c467c59a433e.mesh"]
+
+source_file="res://imported_modules/LIBRARIES/_resources/z-adjusted mesh/z_corner.obj"
+dest_files=["res://.godot/imported/z_corner.obj-08f43bc10ad53e218574c467c59a433e.mesh", "res://.godot/imported/z_corner.obj-08f43bc10ad53e218574c467c59a433e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

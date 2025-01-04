@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dul1upmth7rpa"
+path="res://.godot/imported/NES.obj-e2eb9e3386a4296cbfae6e809dddf5d7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/NES.obj-e2eb9e3386a4296cbfae6e809dddf5d7.mesh"]
+
+source_file="res://imported_modules/LIBRARIES/_resources/obj mesh/NES.obj"
+dest_files=["res://.godot/imported/NES.obj-e2eb9e3386a4296cbfae6e809dddf5d7.mesh", "res://.godot/imported/NES.obj-e2eb9e3386a4296cbfae6e809dddf5d7.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

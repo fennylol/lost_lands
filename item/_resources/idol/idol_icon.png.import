@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://6boncqv5g77s"
+path="res://.godot/imported/idol_icon.png-5d4736c9d022897b17f1dbe267bb77ed.image"
+
+[deps]
+
+source_file="res://item/_resources/idol/idol_icon.png"
+dest_files=["res://.godot/imported/idol_icon.png-5d4736c9d022897b17f1dbe267bb77ed.image"]
+
+[params]
+

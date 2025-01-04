@@ -1,0 +1,129 @@
+[gd_resource type="MeshLibrary" load_steps=31 format=3 uid="uid://buj4qavfvjbr1"]
+
+[ext_resource type="ArrayMesh" uid="uid://cyeyqn1uueltb" path="res://imported_modules/LIBRARIES/_resources/obj mesh/N.obj" id="1_xxdjn"]
+[ext_resource type="Shape3D" uid="uid://bp5aypjd01och" path="res://imported_modules/LIBRARIES/_resources/obj collider/N.tres" id="2_c6x87"]
+[ext_resource type="ArrayMesh" uid="uid://b38m5p8bgahr4" path="res://imported_modules/LIBRARIES/_resources/obj mesh/EW.obj" id="3_qv61d"]
+[ext_resource type="Shape3D" uid="uid://ci2qtnp2tjpmi" path="res://imported_modules/LIBRARIES/_resources/obj collider/EW.tres" id="4_wdlyx"]
+[ext_resource type="ArrayMesh" uid="uid://bldp00gcjrmgf" path="res://imported_modules/LIBRARIES/_resources/obj mesh/NEW.obj" id="5_a8eym"]
+[ext_resource type="Shape3D" uid="uid://der2spqn2m5lf" path="res://imported_modules/LIBRARIES/_resources/obj collider/NEW.tres" id="6_k3sfg"]
+[ext_resource type="ArrayMesh" uid="uid://djn82m2ek6xc6" path="res://imported_modules/LIBRARIES/_resources/obj mesh/SW.obj" id="7_mcjip"]
+[ext_resource type="Shape3D" uid="uid://cnex4qfwgwipn" path="res://imported_modules/LIBRARIES/_resources/obj collider/SW.tres" id="8_e04vp"]
+[ext_resource type="ArrayMesh" uid="uid://lamemp46uci5" path="res://imported_modules/LIBRARIES/_resources/obj mesh/NSW.obj" id="9_jimvf"]
+[ext_resource type="Shape3D" uid="uid://ck75bkwfu72yq" path="res://imported_modules/LIBRARIES/_resources/obj collider/NSW.tres" id="10_8y4y4"]
+[ext_resource type="ArrayMesh" uid="uid://cnkmf8sgx7fx8" path="res://imported_modules/LIBRARIES/_resources/obj mesh/ESW.obj" id="11_hplu4"]
+[ext_resource type="Shape3D" uid="uid://b3tppnylldys4" path="res://imported_modules/LIBRARIES/_resources/obj collider/ESW.tres" id="12_4s8ux"]
+[ext_resource type="ArrayMesh" uid="uid://dbhjetpxtooh" path="res://imported_modules/LIBRARIES/_resources/obj mesh/OPEN.obj" id="13_gw7ux"]
+[ext_resource type="Shape3D" uid="uid://nbilyklsbrqi" path="res://imported_modules/LIBRARIES/_resources/obj collider/OPEN.tres" id="14_ptq2u"]
+[ext_resource type="ArrayMesh" uid="uid://b4pw8l22t70k8" path="res://imported_modules/LIBRARIES/_resources/obj mesh/E.obj" id="15_6btcc"]
+[ext_resource type="Shape3D" uid="uid://cb555j485kcdx" path="res://imported_modules/LIBRARIES/_resources/obj collider/E.tres" id="16_ybqh3"]
+[ext_resource type="ArrayMesh" uid="uid://bmr0n8770cu52" path="res://imported_modules/LIBRARIES/_resources/obj mesh/NE.obj" id="17_gas3e"]
+[ext_resource type="Shape3D" uid="uid://dyb1sk8d6srmd" path="res://imported_modules/LIBRARIES/_resources/obj collider/NE.tres" id="18_7730s"]
+[ext_resource type="ArrayMesh" uid="uid://b7me8oe4qe41n" path="res://imported_modules/LIBRARIES/_resources/obj mesh/S.obj" id="19_5ph36"]
+[ext_resource type="Shape3D" uid="uid://bdrv63pkkb0y6" path="res://imported_modules/LIBRARIES/_resources/obj collider/S.tres" id="20_e0hxv"]
+[ext_resource type="ArrayMesh" uid="uid://ehbgkbeu2exx" path="res://imported_modules/LIBRARIES/_resources/obj mesh/NS.obj" id="21_lv750"]
+[ext_resource type="Shape3D" uid="uid://c4hwfbr7bgle7" path="res://imported_modules/LIBRARIES/_resources/obj collider/NS.tres" id="22_syyeq"]
+[ext_resource type="ArrayMesh" uid="uid://cl13w0ldnuuf3" path="res://imported_modules/LIBRARIES/_resources/obj mesh/ES.obj" id="23_5wj6t"]
+[ext_resource type="Shape3D" uid="uid://dncnf68fcrrmq" path="res://imported_modules/LIBRARIES/_resources/obj collider/ES.tres" id="24_i6jen"]
+[ext_resource type="ArrayMesh" uid="uid://dul1upmth7rpa" path="res://imported_modules/LIBRARIES/_resources/obj mesh/NES.obj" id="25_q3rh6"]
+[ext_resource type="Shape3D" uid="uid://b856vleyoan6b" path="res://imported_modules/LIBRARIES/_resources/obj collider/NES.tres" id="26_o2lj6"]
+[ext_resource type="ArrayMesh" uid="uid://vynruwts075l" path="res://imported_modules/LIBRARIES/_resources/obj mesh/W.obj" id="27_k3q0m"]
+[ext_resource type="Shape3D" uid="uid://dwwbhrrafvlmt" path="res://imported_modules/LIBRARIES/_resources/obj collider/W.tres" id="28_gwu52"]
+[ext_resource type="ArrayMesh" uid="uid://bnt2lgcdc2lx2" path="res://imported_modules/LIBRARIES/_resources/obj mesh/NW.obj" id="29_4f8lu"]
+[ext_resource type="Shape3D" uid="uid://d2heqhlbjo77v" path="res://imported_modules/LIBRARIES/_resources/obj collider/NW.tres" id="30_0rhuq"]
+
+[resource]
+item/0/name = "CLOSED"
+item/0/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/shapes = []
+item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/navigation_layers = 1
+item/1/name = "N"
+item/1/mesh = ExtResource("1_xxdjn")
+item/1/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/shapes = [ExtResource("2_c6x87"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/navigation_layers = 1
+item/2/name = "E"
+item/2/mesh = ExtResource("15_6btcc")
+item/2/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/2/shapes = [ExtResource("16_ybqh3"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/2/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/2/navigation_layers = 1
+item/3/name = "NE"
+item/3/mesh = ExtResource("17_gas3e")
+item/3/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/3/shapes = [ExtResource("18_7730s"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/3/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/3/navigation_layers = 1
+item/4/name = "S"
+item/4/mesh = ExtResource("19_5ph36")
+item/4/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/4/shapes = [ExtResource("20_e0hxv"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/4/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/4/navigation_layers = 1
+item/5/name = "NS"
+item/5/mesh = ExtResource("21_lv750")
+item/5/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/5/shapes = [ExtResource("22_syyeq"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/5/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/5/navigation_layers = 1
+item/6/name = "ES"
+item/6/mesh = ExtResource("23_5wj6t")
+item/6/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/6/shapes = [ExtResource("24_i6jen"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/6/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/6/navigation_layers = 1
+item/7/name = "NES"
+item/7/mesh = ExtResource("25_q3rh6")
+item/7/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/7/shapes = [ExtResource("26_o2lj6"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/7/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/7/navigation_layers = 1
+item/8/name = "W"
+item/8/mesh = ExtResource("27_k3q0m")
+item/8/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/8/shapes = [ExtResource("28_gwu52"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/8/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/8/navigation_layers = 1
+item/9/name = "NW"
+item/9/mesh = ExtResource("29_4f8lu")
+item/9/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/9/shapes = [ExtResource("30_0rhuq"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/9/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/9/navigation_layers = 1
+item/10/name = "EW"
+item/10/mesh = ExtResource("3_qv61d")
+item/10/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/10/shapes = [ExtResource("4_wdlyx"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/10/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/10/navigation_layers = 1
+item/11/name = "NEW"
+item/11/mesh = ExtResource("5_a8eym")
+item/11/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/11/shapes = [ExtResource("6_k3sfg"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/11/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/11/navigation_layers = 1
+item/12/name = "SW"
+item/12/mesh = ExtResource("7_mcjip")
+item/12/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/12/shapes = [ExtResource("8_e04vp"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/12/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/12/navigation_layers = 1
+item/13/name = "NSW"
+item/13/mesh = ExtResource("9_jimvf")
+item/13/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/13/shapes = [ExtResource("10_8y4y4"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/13/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/13/navigation_layers = 1
+item/14/name = "ESW"
+item/14/mesh = ExtResource("11_hplu4")
+item/14/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/14/shapes = [ExtResource("12_4s8ux"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/14/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/14/navigation_layers = 1
+item/15/name = "OPEN"
+item/15/mesh = ExtResource("13_gw7ux")
+item/15/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/15/shapes = [ExtResource("14_ptq2u"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/15/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/15/navigation_layers = 1

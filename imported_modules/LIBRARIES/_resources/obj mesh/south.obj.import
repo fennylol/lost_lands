@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cbeswqx4imws"
+path="res://.godot/imported/south.obj-78294f03cec156e0a38bdccbf394dcef.mesh"
+
+[deps]
+
+files=["res://.godot/imported/south.obj-78294f03cec156e0a38bdccbf394dcef.mesh"]
+
+source_file="res://_resources/mesh objs/south.obj"
+dest_files=["res://.godot/imported/south.obj-78294f03cec156e0a38bdccbf394dcef.mesh", "res://.godot/imported/south.obj-78294f03cec156e0a38bdccbf394dcef.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

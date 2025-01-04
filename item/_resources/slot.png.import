@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://fc6kqdigudk8"
+path="res://.godot/imported/slot.png-08cc340923f5c6d2e26118065e22fd85.image"
+
+[deps]
+
+source_file="res://item/_resources/slot.png"
+dest_files=["res://.godot/imported/slot.png-08cc340923f5c6d2e26118065e22fd85.image"]
+
+[params]
+

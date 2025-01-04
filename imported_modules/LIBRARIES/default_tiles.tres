@@ -1,0 +1,46 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://dgd515am415tq"]
+
+[ext_resource type="Texture2D" uid="uid://hsq5xkjymm5i" path="res://imported_modules/LIBRARIES/_resources/sprites/tileset_16_open.png" id="1_sficx"]
+[ext_resource type="Texture2D" uid="uid://bwjbwy2tgole4" path="res://imported_modules/LIBRARIES/_resources/sprites/tileset_16.png" id="2_8lmlb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hvgte"]
+texture = ExtResource("1_sficx")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iyh4g"]
+texture = ExtResource("2_8lmlb")
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:0/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_hvgte")
+sources/1 = SubResource("TileSetAtlasSource_iyh4g")

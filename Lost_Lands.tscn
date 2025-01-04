@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://ktlburpu67j4"]
+
+[ext_resource type="Script" path="res://Lost_Lands.gd" id="1_j8t53"]
+[ext_resource type="PackedScene" uid="uid://bktji2ms6b31f" path="res://village/villiage.tscn" id="2_lb32i"]
+[ext_resource type="PackedScene" uid="uid://5scnrqgs3cwf" path="res://imported_modules/TIMEKEEPER/TimeKeeper.tscn" id="3_wsvu0"]
+[ext_resource type="TileSet" uid="uid://dgd515am415tq" path="res://imported_modules/LIBRARIES/default_tiles.tres" id="4_4gsxj"]
+[ext_resource type="MeshLibrary" uid="uid://b6j8y3d475uhi" path="res://imported_modules/LIBRARIES/reduced_meshs_z_adjusted.tres" id="4_cs6u1"]
+
+[node name="LostLands" type="Node3D"]
+script = ExtResource("1_j8t53")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.893826, 0.448414, 0, -0.448414, 0.893826, 0, 5.88469, 11.227)
+
+[node name="TimeKeeper" parent="." instance=ExtResource("3_wsvu0")]
+
+[node name="GM" type="GridMap" parent="."]
+mesh_library = ExtResource("4_cs6u1")
+cell_center_y = false
+
+[node name="TM" type="TileMap" parent="."]
+tile_set = ExtResource("4_4gsxj")
+format = 2
+
+[node name="ITEMS" type="Node3D" parent="."]
+
+[node name="VILLAGE" parent="." instance=ExtResource("2_lb32i")]

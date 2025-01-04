@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0pdm26hwj6cu"]
+
+[ext_resource type="Script" path="res://hurty_area/hurty_area.gd" id="1_0bymf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6pwcp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_738vn"]
+
+[node name="hurtyy_area" type="Area3D"]
+script = ExtResource("1_0bymf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_6pwcp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_738vn")
+skeleton = NodePath("../..")

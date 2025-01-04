@@ -1,0 +1,49 @@
+[gd_resource type="MeshLibrary" load_steps=11 format=3 uid="uid://b6j8y3d475uhi"]
+
+[ext_resource type="ArrayMesh" uid="uid://b0mrjih8xwbpk" path="res://imported_modules/LIBRARIES/_resources/z-adjusted mesh/z_end.obj" id="1_hewk5"]
+[ext_resource type="Shape3D" uid="uid://bp5aypjd01och" path="res://imported_modules/LIBRARIES/_resources/obj collider/N.tres" id="2_w2hyg"]
+[ext_resource type="ArrayMesh" uid="uid://dc3xhsvxwj4it" path="res://imported_modules/LIBRARIES/_resources/z-adjusted mesh/z_hall_cornered.obj" id="3_tntk8"]
+[ext_resource type="Shape3D" uid="uid://cr7fok6upv4tt" path="res://imported_modules/LIBRARIES/_resources/obj collider/hall_cornered.tres" id="4_koqhj"]
+[ext_resource type="ArrayMesh" uid="uid://bx0b3iqchf1py" path="res://imported_modules/LIBRARIES/_resources/z-adjusted mesh/z_corner.obj" id="5_n0n2l"]
+[ext_resource type="Shape3D" uid="uid://rcol3o3roc3t" path="res://imported_modules/LIBRARIES/_resources/obj collider/REDUCED_CORNER.tres" id="6_cgk0j"]
+[ext_resource type="ArrayMesh" uid="uid://ba7o46lhmh2p1" path="res://imported_modules/LIBRARIES/_resources/z-adjusted mesh/z_junction.obj" id="7_u8fp2"]
+[ext_resource type="Shape3D" uid="uid://y8klcnn1qx6c" path="res://imported_modules/LIBRARIES/_resources/obj collider/REDUCED_JUNCTION.tres" id="8_gndh8"]
+[ext_resource type="ArrayMesh" uid="uid://bidnt3ui8v7jh" path="res://imported_modules/LIBRARIES/_resources/z-adjusted mesh/z_floor.obj" id="9_7dg7i"]
+[ext_resource type="Shape3D" uid="uid://cyo8mncbmx6u5" path="res://imported_modules/LIBRARIES/_resources/obj collider/ROOM.tres" id="10_31sj0"]
+
+[resource]
+item/0/name = "CLOSED"
+item/0/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/shapes = []
+item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/navigation_layers = 1
+item/1/name = "END"
+item/1/mesh = ExtResource("1_hewk5")
+item/1/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/shapes = [ExtResource("2_w2hyg"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)]
+item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.685, 0)
+item/1/navigation_layers = 1
+item/2/name = "HALL"
+item/2/mesh = ExtResource("3_tntk8")
+item/2/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/2/shapes = [ExtResource("4_koqhj"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/2/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/2/navigation_layers = 1
+item/3/name = "CORNER"
+item/3/mesh = ExtResource("5_n0n2l")
+item/3/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/3/shapes = [ExtResource("6_cgk0j"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)]
+item/3/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/3/navigation_layers = 1
+item/4/name = "JUNCTION"
+item/4/mesh = ExtResource("7_u8fp2")
+item/4/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/4/shapes = [ExtResource("8_gndh8"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)]
+item/4/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/4/navigation_layers = 1
+item/5/name = "OPEN"
+item/5/mesh = ExtResource("9_7dg7i")
+item/5/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/5/shapes = [ExtResource("10_31sj0"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)]
+item/5/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/5/navigation_layers = 1
