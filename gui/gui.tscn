@@ -1,11 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://b00fm03jnnx3n"]
+[gd_scene load_steps=2 format=3 uid="uid://b00fm03jnnx3n"]
 
 [ext_resource type="Script" path="res://gui/gui.gd" id="1_phhai"]
-[ext_resource type="Texture2D" uid="uid://bukao4d4ftcaw" path="res://test.tres" id="2_i3cgt"]
-[ext_resource type="Texture2D" uid="uid://dfx310e6bw58f" path="res://gui/_resources/compass/compass_progress.png" id="3_s4udx"]
-[ext_resource type="Texture2D" uid="uid://c26og081da3o2" path="res://gui/_resources/compass/compass_front.png" id="4_nskyp"]
-[ext_resource type="Texture2D" uid="uid://beayby24bsr68" path="res://gui/_resources/clock/clock_progress.png" id="5_guk5s"]
-[ext_resource type="Texture2D" uid="uid://bf6fo85g6h0k5" path="res://gui/_resources/clock/clock_over.png" id="6_57hqw"]
 
 [node name="Gui" type="VBoxContainer"]
 anchors_preset = 15
@@ -22,75 +17,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-
-[node name="displays" type="VBoxContainer" parent="top"]
-layout_mode = 2
-
-[node name="MINIMAP" type="TextureRect" parent="top/displays"]
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("2_i3cgt")
-expand_mode = 5
-stretch_mode = 4
-
-[node name="dials" type="HBoxContainer" parent="top/displays"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
-
-[node name="compass" type="Control" parent="top/displays/dials"]
-custom_minimum_size = Vector2(128, 0)
-layout_mode = 2
-
-[node name="compass_progress" type="TextureRect" parent="top/displays/dials/compass"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(64, 64)
-texture = ExtResource("3_s4udx")
-expand_mode = 4
-stretch_mode = 4
-
-[node name="compass_front" type="TextureRect" parent="top/displays/dials/compass"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_nskyp")
-expand_mode = 4
-stretch_mode = 4
-
-[node name="clock" type="Control" parent="top/displays/dials"]
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 2
-
-[node name="clock_progress" type="TextureRect" parent="top/displays/dials/clock"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(64, 64)
-texture = ExtResource("5_guk5s")
-expand_mode = 4
-stretch_mode = 4
-
-[node name="clock_front" type="TextureRect" parent="top/displays/dials/clock"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_57hqw")
-expand_mode = 4
-stretch_mode = 4
 
 [node name="spacer" type="Control" parent="top"]
 layout_mode = 2

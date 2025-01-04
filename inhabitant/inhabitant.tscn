@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://qpju56i0ika8"]
 
 [ext_resource type="Script" path="res://inhabitant/inhabitant.gd" id="1_52vjr"]
-[ext_resource type="PackedScene" uid="uid://cborkbrd7wcfj" path="res://inhabitant/inhab_gui.tscn" id="2_gnrd8"]
+[ext_resource type="PackedScene" uid="uid://cs4g7ntb1byv0" path="res://inhabitant/full_gui/full_inhab_gui.tscn" id="2_kirgk"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_qa71u"]
 radius = 0.75
@@ -18,7 +18,7 @@ script = ExtResource("1_52vjr")
 [node name="DEBUG_CAMERA" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="INHABGUI" parent="DEBUG_CAMERA" instance=ExtResource("2_gnrd8")]
+[node name="FULLINHABGUI" parent="DEBUG_CAMERA" instance=ExtResource("2_kirgk")]
 
 [node name="HANDS" type="Area3D" parent="DEBUG_CAMERA"]
 transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871557, 0, 0.0871557, 0.996195, 0, -1, -1.125)

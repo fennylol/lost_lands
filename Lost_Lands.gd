@@ -159,6 +159,11 @@ func bind_inputs():
 	event_random.keycode = KEY_R
 	InputMap.action_add_event("random", event_random)
 	
+	InputMap.add_action("drop_item")
+	var event_drop_item = InputEventKey.new()
+	event_drop_item.keycode = KEY_C
+	InputMap.action_add_event("drop_item", event_drop_item)
+	
 	#InputMap.add_action("__")
 	#var event__ = InputEventMouseButton.new()
 	#event__.button_index = 

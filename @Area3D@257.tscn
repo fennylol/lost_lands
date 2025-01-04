@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcqgsfrtpeo51"]
+
+[ext_resource type="Script" path="res://item/item.gd" id="1_spbog"]
+[ext_resource type="ArrayMesh" uid="uid://dbhjetpxtooh" path="res://imported_modules/LIBRARIES/_resources/obj mesh/OPEN.obj" id="2_tb77c"]
+[ext_resource type="Shape3D" uid="uid://nbilyklsbrqi" path="res://imported_modules/LIBRARIES/_resources/obj collider/OPEN.tres" id="3_1advp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q5c7r"]
+
+[node name="RigidBody3D" type="RigidBody3D"]
+
+[node name="_Area3D_257" type="Area3D" parent="."]
+transform = Transform3D(-0.526735, 0, -0.85003, 0, 1, 0, 0.85003, 0, -0.526735, 0, 0, 0)
+script = ExtResource("1_spbog")
+
+[node name="MESH" type="MeshInstance3D" parent="_Area3D_257"]
+mesh = ExtResource("2_tb77c")
+
+[node name="COLLIDER" type="CollisionShape3D" parent="_Area3D_257"]
+shape = ExtResource("3_1advp")
+
+[node name="COLLIDER" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_q5c7r")

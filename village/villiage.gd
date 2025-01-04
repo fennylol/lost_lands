@@ -21,11 +21,20 @@ func _ready():
 	get_parent().world_tick.connect(process_world_tick)
 
 func process_world_tick(time: Vector4i):
-	gui.update_time_display(time)
+	#gui.update_time_display(time)
 	resource_counts -= resource_decay_rates * inhabitant_multiplier * inhabitants.get_child_count()
 	gui.set_values(Vector3i(resource_counts))
 	if resource_counts.x <= 0 or resource_counts.y <= 0: handle_loss()
-	if inhabitants.get_child_count() and inhabitants.get_child(0).position.y < 0: inhabitants.get_child(0).take_damage(10000)
+	if inhabitants.get_child_count():
+		if inhabitants.get_child(0).position.y < 0: inhabitants.get_child(0).take_damage(10000)
+		inhabitants.get_child(0).process_world_tick(time)
+	
+	var bodies: Array = dropzone.get_overlapping_bodies()
+	if bodies.size():
+		for body in bodies:
+			if !body.is_in_group("inhabitant"): continue
+			var item = body.remove_item(body.active_slot)
+			if item: resource_counts += item.values
 
 
 func init_village(map, cell_size, spawn_count: int = 3):
@@ -36,13 +45,9 @@ func init_village(map, cell_size, spawn_count: int = 3):
 	for i in spawn_count:
 		# create a new inhabitant in the center of the village
 		var inhabitant_name = "krug_"+str(i)
-		spawn_inhabitant(inhabitant_name)
+		var new_inhabitant = spawn_inhabitant(inhabitant_name)
+		new_inhabitant.init_gui(map, cell_size)
 	
-	# spawn work tables
-	
-	# make minimap
-	gui.set_minimap(await gui.tilemap_to_image(map), cell_size)
-	gui.update_minimap_display(0)
 	
 	# pass control to one of the inhabitents
 	posess_next_inhabitant()
@@ -50,7 +55,7 @@ func init_village(map, cell_size, spawn_count: int = 3):
 	# handle resources
 	resource_counts = DEFAULT_RESOURCE_COUNTS
 	gui.set_values(resource_counts)
-	if !dropzone.body_entered.is_connected(drop_items): dropzone.body_entered.connect(drop_items)
+	#if !dropzone.body_entered.is_connected(drop_items): dropzone.body_entered.connect(drop_items)
 
 
 func handle_loss():
@@ -67,6 +72,12 @@ func drop_items(body):
 		var item = body.remove_item(i)
 		if item: resource_counts += item.values
 
+func drop_active_item(body):
+	if !body.is_in_group("inhabitant"): return
+	body.remove_item(body.active_slot)
+	#for i in 4:
+		#var item = body.remove_item(i)
+		#if item: resource_counts += item.values
 
 
 # ╭-----------------╮
@@ -80,8 +91,6 @@ func get_active_inhabitant() -> CharacterBody3D:
 func posess_next_inhabitant():
 	if !inhabitants.get_child_count(): return
 	inhabitants.get_child(0).get_child(0).current = true
-	gui.target_rotation = inhabitants.get_child(0).rotation.y
-	gui.new_player_color()
 	inhabitants.get_child(0).show_gui(true)
 
 
@@ -93,7 +102,6 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion and mouse_captured and inhabitants.get_child_count():
 		var amount: Vector2 = -event.relative * 0.005
 		inhabitants.get_child(0).rotate_inhabitant(amount)
-		gui.rotate_minimap(amount.x)
 
 
 # movement
@@ -121,12 +129,15 @@ func _process(delta):
 	elif inhabitants.get_child_count():
 		if Input.is_action_just_pressed("interact"):
 			inhabitants.get_child(0).interact()
+		if Input.is_action_just_pressed("drop_item"):
+			inhabitants.get_child(0).drop_item()
 		if Input.is_action_just_pressed("scroll_down"):
 			inhabitants.get_child(0).scroll()
 		elif Input.is_action_just_pressed("scroll_up"):
 			inhabitants.get_child(0).scroll(true)
 
-func spawn_inhabitant(inhabitant_name: String = "krug"):
+
+func spawn_inhabitant(inhabitant_name: String = "krug") -> CharacterBody3D:
 	var new_inhabitant = INHAB.instantiate()
 	new_inhabitant.name = inhabitant_name
 	new_inhabitant.position.y += 1.5
@@ -141,7 +152,7 @@ func spawn_inhabitant(inhabitant_name: String = "krug"):
 			handle_inhabitant_death(new_inhabitant)
 	
 	new_inhabitant.health_changed.connect(handle_take_damage)
-	new_inhabitant.show_gui(false)
+	return new_inhabitant
 
 
 func handle_inhabitant_death(inhabitant: Node3D):

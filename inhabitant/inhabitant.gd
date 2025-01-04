@@ -5,10 +5,10 @@ const SPRINT_SPEED = 15
 const JUMP_VELOCITY = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-const InhabGui = preload("res://inhabitant/inhab_gui.gd")
+const InhabGui = preload("res://inhabitant/full_gui/full_inhab_gui.gd")#preload("res://inhabitant/inhab_gui.gd")
 @onready var camera: Camera3D = $DEBUG_CAMERA
 @onready var hands: Area3D = $DEBUG_CAMERA/HANDS
-@onready var GUI: InhabGui = $DEBUG_CAMERA/INHABGUI
+@onready var GUI: InhabGui = $DEBUG_CAMERA/FULLINHABGUI#$DEBUG_CAMERA/INHABGUI
 
 const MAX_HEALTH: float = 100
 var health: float = MAX_HEALTH
@@ -30,8 +30,16 @@ func remove_item(slot: int) -> Node:
 	inventory[slot] = null
 	GUI.clear_inventory_icon(slot)
 	if active_slot == slot and hands.get_child_count() > 1:
-		hands.get_child(1).queue_free()
+		hands.remove_child(hands.get_child(1))
+		#hands.get_child(1).queue_free()
 	return item
+
+func drop_item(slot: int = active_slot):
+	var item = remove_item(slot)
+	if item: 
+		get_tree().root.add_child(item)
+		item.position = global_position
+	print("dropping slot ", slot)
 
 
 func interact():
@@ -69,6 +77,7 @@ func rotate_inhabitant(amount: Vector2):
 	rotate_y(amount.x)
 	camera.rotate_x(amount.y)
 	camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
+	GUI.adjust_target_rotation(amount.x)
 
 
 
@@ -105,3 +114,19 @@ func take_damage(dmg: float):
 func set_health(val: float):
 	health = val
 	health_changed.emit(health)
+
+
+
+# ╭------------╮
+# |    gui     |
+# ╰------------╯
+func init_gui(map, cell_size):
+	show_gui(false)
+	GUI.set_minimap(await GUI.tilemap_to_image(map), cell_size)
+	GUI.update_minimap_display(0)
+
+func process_world_tick(time: Vector4i): GUI.rotate_clock(time)
+func show_minimap(show: bool = true): GUI.show_minimap(show)
+func show_markers(show: bool = true): GUI.show_markers(show)
+func show_compass(show: bool = true): GUI.show_compass(show)
+func show_clock(show: bool = true): GUI.show_clock(show)
