@@ -13,7 +13,7 @@ const InhabGui = preload("res://inhabitant/inhab_gui/inhab_gui.gd")
 const MAX_HEALTH: float = 100
 var health: float = MAX_HEALTH
 signal health_changed(health: float)
-
+signal dead()
 
 var inventory: Array[Node] = [null,null,null,null]
 var inventory_slots: int = inventory.size()
@@ -110,8 +110,13 @@ func take_damage(dmg: float):
 func set_health(val: float):
 	health = val
 	health_changed.emit(health)
+	if health <= 0: handle_death()
 
-
+func handle_death():
+	dead.emit()
+	for item in inventory:
+		if item: item.queue_free()
+	queue_free()
 
 # ╭------------╮
 # |    gui     |

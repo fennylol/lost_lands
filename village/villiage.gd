@@ -168,19 +168,17 @@ func spawn_inhabitant(inhabitant_name: String = "krug") -> CharacterBody3D:
 	
 	var handle_take_damage = func(val): 
 		print(inhabitant_name, " health: ", val)
-		if val <= 0: 
-			print(inhabitant_name, " died...")
-			handle_inhabitant_death(new_inhabitant)
+		if val <= 0: print(inhabitant_name, " died...")
 	
 	new_inhabitant.health_changed.connect(handle_take_damage)
+	new_inhabitant.dead.connect(handle_inhabitant_death)
 	return new_inhabitant
 
 
-func handle_inhabitant_death(inhabitant: Node3D):
+func handle_inhabitant_death():
 	inhabitant_count -= 1
 	
 	if !inhabitant_count: handle_loss()
-	
-	inhabitants.remove_child(inhabitant)
-	inhabitant.queue_free()
-	posess_next_inhabitant()
+	else:
+		inhabitants.remove_child(inhabitants.get_child(0))
+		posess_next_inhabitant()
