@@ -145,7 +145,6 @@ static func generate_four_biomes(corner_size: Vector2i, center_size: Vector2i, b
 		mazes[2][i].append_array(mazes[3][i])
 		mazes[0].append(mazes[2][i])
 	
-	
 	return mazes[0]
 
 

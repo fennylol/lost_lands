@@ -56,8 +56,9 @@ func pause(unpause: bool = false): PAUSED = not unpause
 
 
 func new_maze():
-	remove_child(GM)
+
 	GM.queue_free()
+	remove_child(GM)
 	
 	var generation_seed: = master_rng.randi()
 	
@@ -72,15 +73,17 @@ func new_maze():
 	var biomes: Array[int] = select_biomes(generation_seed)
 	var maze = MINOTAUR.generate_four_biomes(maze_size, real_start_size, biomes, generation_seed) #MINOTAUR.generate_four_corners(maze_size, start_size, balanced, seed)
 	var descriptor = MINOTAUR.generate_descriptor(maze)
-	
-	var TM = MINOTAUR.map_to_tile(descriptor, load("res://imported_modules/LIBRARIES/default_tiles.tres"))
 	GM = MINOTAUR.map_to_grid(descriptor, load("res://QuaterniusDev_models/map_tiles/finals/quat_meshs.tres"), true, cell_size)
-	
+
 	var total_value = ITEM_SPAWNER.spawn_items_based(GM, descriptor, biomes, generation_seed)
 	print("total value generated: ", total_value)
+	
+	var TM = MINOTAUR.map_to_tile(descriptor, load("res://imported_modules/LIBRARIES/default_tiles.tres"))
 	village.init_village(TM, cell_size, STARTING_INHAB_COUNT)
-
+	TM.queue_free()
+	
 	add_child(GM)
+
 
 func select_biomes(seed: int = 0) -> Array[int]:
 	var rng = RandomNumberGenerator.new()
