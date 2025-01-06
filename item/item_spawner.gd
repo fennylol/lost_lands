@@ -1,6 +1,5 @@
 const ITEM = preload("res://item/item.gd")
-const BIOME_DATA = preload("res://biome_data.gd")
-const ITEM_LIST = BIOME_DATA.ITEM_LIST
+const ITEM_LIST = DATA.ITEM_LIST
 const VALUE_VARIENCE: float = 0.15
 const LOOT_POTENTIAL_VARIENCE: float = 0.33
 
@@ -20,7 +19,7 @@ static func spawn_items_based(gm: GridMap, map_descriptor: Array, biomes: Array,
 	
 	for quad_idx in spawns.size():
 		# find budget for quad
-		var lp: float = BIOME_DATA.get_biome_loot_potential(biomes[quad_idx])
+		var lp: float = DATA.get_biome_loot_potential(biomes[quad_idx])
 		var max_budget: float = lp * (1+LOOT_POTENTIAL_VARIENCE)
 		var min_budget: float = lp * (1-LOOT_POTENTIAL_VARIENCE)
 		var spawnable_tiles: int = spawns[quad_idx][SPAWN_TYPES.ENDS].size() \
@@ -46,7 +45,7 @@ static func spawn_items_based(gm: GridMap, map_descriptor: Array, biomes: Array,
 				#if success and not already spawned in, spawn
 				if spawn_rand <= quad_budget and pos:
 					# select item and create
-					var item_list = BIOME_DATA.get_biome_items(biomes[quad_idx])
+					var item_list = DATA.get_biome_items(biomes[quad_idx])
 					var item_idx = rng.randi_range(0,item_list.size()-1)
 					var item_data = item_list[item_idx].duplicate()
 					# randomize values slightly
@@ -58,9 +57,9 @@ static func spawn_items_based(gm: GridMap, map_descriptor: Array, biomes: Array,
 					var new_item = ITEM.create_item_from_array(item_data)
 					
 					# position item, add to map and lower loot potential
-					new_item.position = gm.map_to_local(Vector3(pos.x,0,pos.y))
+					new_item.position = gm.map_to_local(Vector3(pos.x,5,pos.y))
 					gm.add_child(new_item)
-					var value = BIOME_DATA.get_biome_item_value(biomes[quad_idx], item_idx).length()
+					var value = DATA.get_biome_item_value(biomes[quad_idx], item_idx).length()
 					quad_budget -= value
 					total_value += value
 					#printerr("spawned at ",pos," costing ", value)

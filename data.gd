@@ -1,7 +1,11 @@
+class_name DATA extends RefCounted
+
+enum LAYERS {PLAYER = 1, MAP = 2, ITEM = 4}
+
 enum BIOME_FIELDS {NAME, DIFFICULTY, LOOT_POTENTIAL, MAZE_FLAGS, ITEMS}
 enum MAZE_FLAGS {BALANCED, ROOMS}
 enum ITEMS_RARITY {COMMON, RARE, AWOOGA}
-### !!! SORT ITEM LISTS BY VALUE !!! ###
+
 # loot_potential is the average value contained at each potential spawn space. 
 const BIOME_LIST = [
 	[
@@ -9,28 +13,45 @@ const BIOME_LIST = [
 		1,
 		10,
 		[false, false],
-		[ITEM_LIST[0]]
+		[
+			ITEM_LIST[ITEM_NAMES.THING],
+			ITEM_LIST[ITEM_NAMES.APPLE],
+			ITEM_LIST[ITEM_NAMES.GOLDEN_APPLE]
+		]
 	],
 	[
 		"balanced",
 		2,
 		10,
 		[true, false],
-		[ITEM_LIST[1]]
+		[
+			ITEM_LIST[ITEM_NAMES.APPLE_CRATE],
+			ITEM_LIST[ITEM_NAMES.APPLE]
+		]
 	],
 	[
 		"roomy",
 		4,
 		10,
 		[false, true],
-		[ITEM_LIST[2]]
+		[
+			ITEM_LIST[ITEM_NAMES.MONKEY_IDOL],
+			ITEM_LIST[ITEM_NAMES.APPLE]
+		]
 	],
 	[
 		"scary",
 		8,
 		10,
 		[true, true],
-		[ITEM_LIST[0], ITEM_LIST[1], ITEM_LIST[2]]
+		[
+			ITEM_LIST[ITEM_NAMES.THING], 
+			ITEM_LIST[ITEM_NAMES.APPLE_CRATE], 
+			ITEM_LIST[ITEM_NAMES.MONKEY_IDOL],
+			ITEM_LIST[ITEM_NAMES.APPLE],
+			ITEM_LIST[ITEM_NAMES.GOLDEN_APPLE],
+			ITEM_LIST[ITEM_NAMES.GOLDEN_APPLE]
+		]
 	]
 ]
 
@@ -43,6 +64,7 @@ static func get_biome_item_value(biome_index: int, item_index: int) -> Vector3: 
 
 
 enum ITEM_FIELDS {NAME, MESH, COLLIDER, ICON, VALUES, SCRIPT}
+enum ITEM_NAMES {THING, APPLE_CRATE, MONKEY_IDOL, APPLE, GOLDEN_APPLE}
 const ITEM_LIST = [
 	[
 		"thing", 
@@ -78,8 +100,7 @@ const ITEM_LIST = [
 		preload("res://item/_resources/apple/apple_shape.tres"),
 		preload("res://item/_resources/apple/golden_apple_icon.png"),
 		Vector3(100,10,0)
-	],
-	
+	]
 ]
 
 static func get_item_name(item_index: int) -> String: return ITEM_LIST[item_index][ITEM_FIELDS.NAME]

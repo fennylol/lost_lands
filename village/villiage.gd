@@ -26,15 +26,11 @@ func process_world_tick(time: Vector4i):
 	gui.set_values(Vector3i(resource_counts))
 	if resource_counts.x <= 0 or resource_counts.y <= 0: handle_loss()
 	if inhabitants.get_child_count():
-		if inhabitants.get_child(0).position.y < 0: inhabitants.get_child(0).take_damage(10000)
 		inhabitants.get_child(0).process_world_tick(time)
+		if inhabitants.get_child(0).position.y < 0: inhabitants.get_child(0).take_damage(10000)
 	
-	var bodies: Array = dropzone.get_overlapping_bodies()
-	if bodies.size():
-		for body in bodies:
-			if !body.is_in_group("inhabitant"): continue
-			var item = body.remove_item(body.active_slot)
-			if item: resource_counts += item.values
+	collect_resources_from_items()
+
 
 
 func init_village(map, cell_size, spawn_count: int = 3):
@@ -55,7 +51,6 @@ func init_village(map, cell_size, spawn_count: int = 3):
 	# handle resources
 	resource_counts = DEFAULT_RESOURCE_COUNTS
 	gui.set_values(resource_counts)
-	#if !dropzone.body_entered.is_connected(drop_items): dropzone.body_entered.connect(drop_items)
 	var new_trip = func(body):
 		if !body.is_in_group("inhabitant"): return
 		if body.get_markers(): body.new_player_color()
@@ -70,18 +65,16 @@ func handle_loss():
 # ╭-----------╮
 # |   items   |
 # ╰-----------╯
-func drop_items(body):
-	if !body.is_in_group("inhabitant"): return
-	for i in 4:
-		var item = body.remove_item(i)
-		if item: resource_counts += item.values
-
-func drop_active_item(body):
-	if !body.is_in_group("inhabitant"): return
-	body.remove_item(body.active_slot)
-	#for i in 4:
-		#var item = body.remove_item(i)
-		#if item: resource_counts += item.values
+func collect_resources_from_items():
+	var bodies: Array = dropzone.get_overlapping_bodies()
+	if bodies.size():
+		for body in bodies:
+			if body.is_in_group("item"):
+				resource_counts += body.values
+				body.queue_free()
+			#elif body.is_in_group("inhabitant"):
+				#var item = body.remove_item(body.active_slot)
+				#if item: resource_counts += item.values
 
 
 # ╭-----------------╮
@@ -116,11 +109,11 @@ func _physics_process(delta):
 	
 	if mouse_captured:
 		input_dir = Input.get_vector("left", "right", "up", "down")
-		if Input.is_action_just_pressed("jump"): jump = true
-		if Input.is_action_pressed("sprint"): sprint = true
+		var auto_bhop = true # lol
+		if Input.is_action_just_pressed("jump") or (auto_bhop and Input.is_action_pressed("jump")): jump = true
 	
 	if inhabitants.get_child_count():
-		inhabitants.get_child(0).move_inhabitant(input_dir, jump, sprint, delta)
+		inhabitants.get_child(0).handle_inputs(input_dir, jump)
 
 var show_minimap: bool = false
 var show_markers: bool = false

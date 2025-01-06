@@ -84,17 +84,16 @@ static func generate_four_biomes(corner_size: Vector2i, center_size: Vector2i, b
 	var rng := RandomNumberGenerator.new()
 	rng.seed = generation_seed if generation_seed else int(Time.get_unix_time_from_system()*1000)
 	
-	var BIOME_DATA = load("res://biome_data.gd")
-	var BIOME_LIST = BIOME_DATA.BIOME_LIST
+	var BIOME_LIST = DATA.BIOME_LIST
 	var mazes := []
 	mazes.resize(4)
 	
 	for i in 4:
 		mazes[i] = generate_points_inverted(corner_size)
 		var size := Vector2i(mazes[i].size(), mazes[i][0].size())
-		var flags: Array = BIOME_DATA.get_biome_maze_flags(biomes[i])
-		var balanced: bool = flags[BIOME_DATA.MAZE_FLAGS.BALANCED]
-		var rooms: bool = flags[BIOME_DATA.MAZE_FLAGS.ROOMS]
+		var flags: Array = DATA.get_biome_maze_flags(biomes[i])
+		var balanced: bool = flags[DATA.MAZE_FLAGS.BALANCED]
+		var rooms: bool = flags[DATA.MAZE_FLAGS.ROOMS]
 		
 		if rooms: fill_maze_recursive_split_with_room(mazes[i], size, balanced, rng)
 		else: fill_maze_recursive_split(mazes[i], size, balanced, rng)
@@ -364,6 +363,7 @@ static func map_to_tile(map: Array, tiles: TileSet) -> TileMap:
 
 static func map_to_grid(map: Array, meshs: MeshLibrary, reduced_tileset = false, grid_scale: Vector3 = Vector3i.ZERO) -> GridMap:
 	var GM = GridMap.new()
+	GM.name = "GM"
 	GM.mesh_library = scale_all_mesh_items(meshs, grid_scale) if grid_scale else meshs
 	GM.cell_size *= grid_scale
 	GM.cell_center_y = false
@@ -386,6 +386,9 @@ static func map_to_grid(map: Array, meshs: MeshLibrary, reduced_tileset = false,
 			for x in map[y].size():
 				var type: int = REDUCE_DIR[map[y][x]][MESH]
 				var rot: int = REDUCE_DIR[map[y][x]][ROTATION]
+				if not type:
+					var rots = [0,10,16,22]
+					rot = rots[randi_range(0,3)]
 				GM.set_cell_item(Vector3i(x,0,y), type, rot)
 	else:
 		for y in map.size():

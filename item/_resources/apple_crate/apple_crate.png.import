@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qf3h2ecau360"
-path.s3tc="res://.godot/imported/apple_crate.png-92d66aa97cd99c6d1408f449f93b28e0.s3tc.ctex"
+path="res://.godot/imported/apple_crate.png-92d66aa97cd99c6d1408f449f93b28e0.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://item/_resources/apple_crate/apple_crate.png"
-dest_files=["res://.godot/imported/apple_crate.png-92d66aa97cd99c6d1408f449f93b28e0.s3tc.ctex"]
+dest_files=["res://.godot/imported/apple_crate.png-92d66aa97cd99c6d1408f449f93b28e0.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

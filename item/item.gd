@@ -1,4 +1,5 @@
-extends Area3D
+#extends Area3D
+extends RigidBody3D
 
 var values := Vector3.ZERO 
 var icon
@@ -6,8 +7,8 @@ var icon
 func get_icon(): if icon: return icon
 
 
-const ITEM_FIELDS = preload("res://biome_data.gd").ITEM_FIELDS# {NAME, MESH, COLLIDER, VALUES, ICON, SCRIPT}
-static func create_item_from_array(data: Array) -> Area3D:
+const ITEM_FIELDS = DATA.ITEM_FIELDS
+static func create_item_from_array(data: Array) -> RigidBody3D:
 	if data.size()-1 < ITEM_FIELDS.VALUES or \
 					not (data[ITEM_FIELDS.NAME] is String \
 					and data[ITEM_FIELDS.MESH] is Object\
@@ -23,23 +24,25 @@ static func create_item_from_array(data: Array) -> Area3D:
 				"\ndata[VALUES]:", typeof(data[ITEM_FIELDS.VALUES]))
 		return null
 	
-	var new_item = Area3D.new()
+	var new_item = RigidBody3D.new()
 	var new_mesh := MeshInstance3D.new()
 	var new_collider := CollisionShape3D.new()
 	
 	var script: Script = data[ITEM_FIELDS.COLLIDER] if data.size()-1 >= ITEM_FIELDS.SCRIPT else preload("res://item/item.gd")
 	new_item.set_script(script)
 	new_item.add_to_group("item")
+	new_item.collision_layer = DATA.LAYERS.ITEM
+	new_item.collision_mask = DATA.LAYERS.PLAYER + DATA.LAYERS.MAP + DATA.LAYERS.ITEM
 	
 	new_mesh.mesh = data[ITEM_FIELDS.MESH]
 	new_collider.shape = data[ITEM_FIELDS.COLLIDER]
 	new_item.values = data[ITEM_FIELDS.VALUES]
 	var ico = ImageTexture.create_from_image(data[ITEM_FIELDS.ICON])
-	new_item.icon =ico
+	new_item.icon = ico
 	
 	new_mesh.name = "MESH"
 	new_collider.name = "COLLIDER"
-	new_item.name = data[ITEM_FIELDS.NAME]
+	new_item.name = data[ITEM_FIELDS.NAME] + "_" + str(new_item.get_instance_id())
 	
 	new_item.add_child(new_mesh)
 	new_item.add_child(new_collider)
