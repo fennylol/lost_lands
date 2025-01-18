@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://4btk1b72sxyh"
+path="res://.godot/imported/lettuce_icon.png-ef07625e71b1ee599b63c39bb203576a.image"
+
+[deps]
+
+source_file="res://item/_resources/lettuce/lettuce_icon.png"
+dest_files=["res://.godot/imported/lettuce_icon.png-ef07625e71b1ee599b63c39bb203576a.image"]
+
+[params]
+

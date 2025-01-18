@@ -1,3 +1,5 @@
+class_name MINOTAUR extends RefCounted
+
 enum DIR_VAL {N = 1, E = 2, S = 4, W = 8}
 enum DIR {CLOSED,   N,   E,   NE,
 		  S,        NS,  ES,  NES,

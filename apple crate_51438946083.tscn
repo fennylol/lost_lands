@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://item/item.gd" id="1_3w0t7"]
+[ext_resource type="ArrayMesh" path="res://item/_resources/apple_crate/apple_crate.obj" id="2_vo0dj"]
+[ext_resource type="Shape3D" path="res://item/_resources/apple_crate/apple_crate_shape.tres" id="3_ldnle"]
+
+[node name="apple crate_51438946083" type="RigidBody3D"]
+transform = Transform3D(-0.522895, 0.0118179, -0.852315, 0.00295559, 0.999923, 0.0120513, 0.852392, 0.00378248, -0.522889, -52.7735, 0.170606, -90.8386)
+collision_layer = 4
+collision_mask = 7
+sleeping = true
+linear_velocity = Vector3(6.14173e-05, -6.05476e-05, 8.06101e-07)
+angular_velocity = Vector3(-4.88621e-05, 1.23651e-05, -0.000211352)
+script = ExtResource("1_3w0t7")
+
+[node name="MESH" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_vo0dj")
+
+[node name="COLLIDER" type="CollisionShape3D" parent="."]
+shape = ExtResource("3_ldnle")

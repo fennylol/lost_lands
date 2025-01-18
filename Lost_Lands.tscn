@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://ktlburpu67j4"]
 
 [ext_resource type="Script" path="res://Lost_Lands.gd" id="1_j8t53"]
+[ext_resource type="PackedScene" uid="uid://bjjceeyq3csc3" path="res://time_keeper/TimeKeeper.tscn" id="2_cekif"]
 [ext_resource type="PackedScene" uid="uid://bktji2ms6b31f" path="res://village/villiage.tscn" id="2_lb32i"]
-[ext_resource type="PackedScene" uid="uid://5scnrqgs3cwf" path="res://imported_modules/TIMEKEEPER/TimeKeeper.tscn" id="3_wsvu0"]
 [ext_resource type="MeshLibrary" uid="uid://bvx82tqcriag1" path="res://QuaterniusDev_models/map_tiles/finals/quat_meshs.tres" id="3_x62lf"]
 
 [node name="LostLands" type="Node3D"]
@@ -11,7 +11,7 @@ script = ExtResource("1_j8t53")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.893826, 0.448414, 0, -0.448414, 0.893826, 0.0730133, 5.88469, 11.2159)
 
-[node name="TimeKeeper" parent="." instance=ExtResource("3_wsvu0")]
+[node name="TimeKeeper" parent="." instance=ExtResource("2_cekif")]
 
 [node name="GM" type="GridMap" parent="."]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
@@ -24,6 +24,3 @@ data = {
 }
 
 [node name="VILLAGE" parent="." instance=ExtResource("2_lb32i")]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.735388, -0.622588, -0.267562, 0, -0.39484, 0.91875, -0.677646, -0.675638, -0.290361, 0, 0.865742, 0)

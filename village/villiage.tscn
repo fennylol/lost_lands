@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://bktji2ms6b31f"]
 
 [ext_resource type="Script" path="res://village/villiage.gd" id="1_if1pa"]
-[ext_resource type="MeshLibrary" uid="uid://bxhjji1dv41jl" path="res://imported_modules/LIBRARIES/reduced_meshs.tres" id="3_8n77d"]
+[ext_resource type="MeshLibrary" uid="uid://bvx82tqcriag1" path="res://QuaterniusDev_models/map_tiles/finals/quat_meshs.tres" id="2_2cjcs"]
 [ext_resource type="PackedScene" uid="uid://c0pdm26hwj6cu" path="res://hurty_area/hurty_area.tscn" id="3_e2jq7"]
-[ext_resource type="PackedScene" uid="uid://b00fm03jnnx3n" path="res://gui/gui.tscn" id="4_l0rqj"]
+[ext_resource type="PackedScene" uid="uid://b00fm03jnnx3n" path="res://village/gui/gui.tscn" id="4_h1ksy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p37cs"]
 size = Vector3(13, 3, 13)
@@ -12,17 +12,18 @@ size = Vector3(13, 3, 13)
 script = ExtResource("1_if1pa")
 
 [node name="village_boundry_wall" type="GridMap" parent="."]
-mesh_library = ExtResource("3_8n77d")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+mesh_library = ExtResource("2_2cjcs")
 cell_center_y = false
 data = {
-"cells": PackedInt32Array(0, 0, 5, 1, 0, 5, 1, 1, 5, 0, 1, 5, 65535, 0, 5, 65535, 65535, 5, 0, 65535, 5, 1, 65535, 5, 0, 65534, 5, 65535, 65534, 5, 65534, 65535, 5, 65534, 0, 5, 65535, 1, 5, 65533, 2, 5, 65533, 65533, 5, 2, 65533, 5, 2, 2, 5, 2, 65534, 1048581, 2, 65535, 1048581, 2, 0, 1048581, 2, 1, 1048581, 1, 2, 1048581, 65535, 2, 1048581, 65534, 2, 1048581, 65534, 1, 1048581, 65533, 1, 1048581, 65533, 0, 1048581, 65533, 65535, 1048581, 65533, 65534, 1048581, 65534, 65534, 1048581, 65534, 65533, 1048581, 65535, 65533, 1048581, 0, 65533, 1048581, 1, 65533, 1048581, 1, 65534, 1048581, 0, 2, 5)
+"cells": PackedInt32Array(0, 0, 5, 1, 0, 5, 1, 1, 5, 0, 1, 5, 65535, 0, 5, 65535, 65535, 5, 0, 65535, 5, 1, 65535, 5, 0, 65534, 5, 65535, 65534, 5, 65534, 65535, 5, 65534, 0, 5, 65535, 1, 5, 65533, 2, 5, 65533, 65533, 5, 2, 65533, 655361, 2, 2, 5, 2, 65534, 1048581, 2, 65535, 1048581, 2, 0, 1048581, 2, 1, 1048581, 1, 2, 1048581, 65535, 2, 1048581, 65534, 2, 1048581, 65534, 1, 1048581, 65533, 1, 1048581, 65533, 0, 1048581, 65533, 65535, 1048581, 65533, 65534, 1048581, 65534, 65534, 1048581, 65534, 65533, 1048581, 65535, 65533, 1048581, 0, 65533, 1048581, 1, 65533, 1048581, 1, 65534, 1048581, 0, 2, 5)
 }
-metadata/_editor_floor_ = Vector3(0, 0, 0)
+metadata/_editor_floor_ = Vector3(0, 3, 0)
 
 [node name="INHABITENTS" type="Node3D" parent="."]
 
 [node name="hurtyy_area" parent="." instance=ExtResource("3_e2jq7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8217, 1.71181, -4.38519)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.97349, 1.71181, -5.26059)
 
 [node name="DROPZONE" type="Area3D" parent="."]
 collision_layer = 2
@@ -32,4 +33,11 @@ collision_mask = 5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("BoxShape3D_p37cs")
 
-[node name="Gui" parent="." instance=ExtResource("4_l0rqj")]
+[node name="Gui" parent="." instance=ExtResource("4_h1ksy")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
+light_energy = 5.0
+light_volumetric_fog_energy = 0.5
+spot_range = 15.0
+spot_attenuation = 1e-05

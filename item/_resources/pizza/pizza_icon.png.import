@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://b8w3m1awv76gt"
+path="res://.godot/imported/pizza_icon.png-a449066ec093a72da7efbe25b81f950b.image"
+
+[deps]
+
+source_file="res://item/_resources/pizza/pizza_icon.png"
+dest_files=["res://.godot/imported/pizza_icon.png-a449066ec093a72da7efbe25b81f950b.image"]
+
+[params]
+

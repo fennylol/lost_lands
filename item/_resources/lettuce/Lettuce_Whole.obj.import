@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dh46jfbgra4c2"
+path="res://.godot/imported/Lettuce_Whole.obj-6302ed1eb077287d0ac6f97ca4fcc71d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Lettuce_Whole.obj-6302ed1eb077287d0ac6f97ca4fcc71d.mesh"]
+
+source_file="res://item/_resources/lettuce/Lettuce_Whole.obj"
+dest_files=["res://.godot/imported/Lettuce_Whole.obj-6302ed1eb077287d0ac6f97ca4fcc71d.mesh", "res://.godot/imported/Lettuce_Whole.obj-6302ed1eb077287d0ac6f97ca4fcc71d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

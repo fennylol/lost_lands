@@ -1,5 +1,10 @@
 extends VBoxContainer
 
+@onready var health_loss_bar = $inventory/spacer/health_bar/health_lost_bar as TextureProgressBar
+@onready var health_bar = $inventory/spacer/health_bar/health_bar as TextureProgressBar
+var shock_value: float = 0.0
+var last_health: float = 0
+
 func _ready():
 	var adjust_sizing = func():
 		var new_size = get_viewport_rect().size.y * 0.2
@@ -36,6 +41,23 @@ func _process(delta):
 	if not visible: return
 	if maximap: update_minimap_display(delta)
 	update_compass_rotation(delta)
+	
+	if shock_value >= 0.0:
+		shock_value -= delta
+	else:
+		if health_loss_bar.value > health_bar.value:
+			health_loss_bar.value = lerp(health_loss_bar.value, health_bar.value, delta)
+		else: health_loss_bar.value = health_bar.value
+		last_health = health_bar.value
+
+func set_health(amount: float): 
+	var sv = (health_bar.value-amount)/50 + shock_value
+	# TODO: 0.5 really should be IN_GAME_MINUTE_LENGTH_IN_REAL_WORLD_SECONDS
+	shock_value = max(0.5, sv)
+	health_bar.value = amount
+func set_max_health(amount: float): 
+	health_bar.max_value = amount
+	health_loss_bar.max_value
 
 # ╭-------------╮
 # |  inventory  |
@@ -96,7 +118,7 @@ func set_minimap(img: Image, scale: Vector3):
 	var subset_rect := Rect2i(Vector2i.ZERO,Vector2i(2*(minimap_range),2*minimap_range))
 	minimap.texture = ImageTexture.create_from_image(maximap.get_region(subset_rect))
 
-func tilemap_to_image(tilemap: TileMap, save_resource: bool = false, resource_path: String = "res://gui/_resources/minimap.png") -> Image:
+func tilemap_to_image(tilemap: TileMap, save_resource: bool = false, resource_path: String = "res://inhabitant/inhab_gui/minimap.png") -> Image:
 	# Get the used cells and bounds
 	var used_cells = tilemap.get_used_cells(0)  # 0 is the default layer
 	if used_cells.is_empty():

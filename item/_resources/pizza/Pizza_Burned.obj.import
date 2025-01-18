@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://5jqvvfhev1df"
+path="res://.godot/imported/Pizza_Burned.obj-ecc628c76436b583e583c54351891ffd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Pizza_Burned.obj-ecc628c76436b583e583c54351891ffd.mesh"]
+
+source_file="res://item/_resources/pizza/Pizza_Burned.obj"
+dest_files=["res://.godot/imported/Pizza_Burned.obj-ecc628c76436b583e583c54351891ffd.mesh", "res://.godot/imported/Pizza_Burned.obj-ecc628c76436b583e583c54351891ffd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

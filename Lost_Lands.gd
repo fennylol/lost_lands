@@ -4,9 +4,9 @@ var PAUSED: bool = false
 
 var master_rng := RandomNumberGenerator.new()
 # bits 'n bobbles
-const MINOTAUR = preload("res://minotaur/minotaur.gd")
-const ITEM = preload("res://item/item.gd")
-const ITEM_SPAWNER = preload("res://item/item_spawner.gd")
+#const MINOTAUR = preload("res://minotaur/minotaur.gd")
+#const ITEM = preload("res://item/item.gd")
+#const ITEM_SPAWNER = preload("res://item/item_spawner.gd")
 @onready var GM: GridMap = $GM
 @onready var village: Node3D = $VILLAGE
 const STARTING_INHAB_COUNT = 3
@@ -17,16 +17,15 @@ var start_size := Vector2i(4,4)
 var cell_size := Vector3(8, 6, 8)
 #var maze_size := Vector2i(5,5)
 #var start_size := Vector2i(6,6)
-#var cell_size := Vector3(2,.1,2)
-var balanced := false
-var rooms := false
+#var cell_size := Vector3(4,.1,4)
 
 # time
 enum {AM, PM}
 enum {HOUR, MINUTE, PERIOD, DAY}
-var world_time = Vector4i(11, 59, PM, -1)
-var time_since_tick = 0
+#var world_time = Vector4i(11, 59, PM, 0)
+var world_time = Vector4i(11, 59, AM, 1)
 var IN_GAME_MINUTE_LENGTH_IN_REAL_WORLD_SECONDS = .5
+var time_since_tick = 0
 signal world_tick(time: Vector4i)
 
 
@@ -55,11 +54,10 @@ func pause(unpause: bool = false): PAUSED = not unpause
 
 
 func new_maze():
-
 	GM.queue_free()
 	remove_child(GM)
 	
-	var generation_seed: = master_rng.randi()
+	var generation_seed := master_rng.randi()
 	
 	var real_start_size: Vector2
 	if (generation_seed & ((1 << 16) - 1)) == 0xBEEF:
@@ -80,10 +78,13 @@ func new_maze():
 	print("total value generated: ", total_value)
 	
 	var TM = MINOTAUR.map_to_tile(descriptor, load("res://imported_modules/LIBRARIES/default_tiles.tres"))
-	village.init_village(TM, cell_size, STARTING_INHAB_COUNT)
+	var kill_dist = start_size.length()/1.5 * Vector2(cell_size.x, cell_size.z).length()
+	village.init_village(TM, cell_size, kill_dist, STARTING_INHAB_COUNT)
 	TM.queue_free()
 	
 	add_child(GM)
+	world_tick.emit(world_time)
+	$TimeKeeper.align_times(world_time[DAY])
 
 
 func select_biomes(seed: int = 0) -> Array[int]:

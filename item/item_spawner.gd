@@ -1,5 +1,7 @@
-const ITEM = preload("res://item/item.gd")
+#const ITEM = preload("res://item/item.gd")
+class_name ITEM_SPAWNER extends RefCounted
 const ITEM_LIST = DATA.ITEM_LIST
+const ITEM_FIELDS = DATA.ITEM_FIELDS
 const VALUE_VARIENCE: float = 0.15
 const LOOT_POTENTIAL_VARIENCE: float = 0.33
 
@@ -49,26 +51,81 @@ static func spawn_items_based(gm: GridMap, map_descriptor: Array, biomes: Array,
 					var item_idx = rng.randi_range(0,item_list.size()-1)
 					var item_data = item_list[item_idx].duplicate()
 					# randomize values slightly
-					item_data[ITEM.ITEM_FIELDS.VALUES] *= Vector3(
+					item_data[ITEM_FIELDS.VALUES] *= Vector3(
 						rng.randf_range((1-VALUE_VARIENCE), (1+VALUE_VARIENCE)),
 						rng.randf_range((1-VALUE_VARIENCE), (1+VALUE_VARIENCE)),
 						rng.randf_range((1-VALUE_VARIENCE), (1+VALUE_VARIENCE))
 					)
-					var new_item = ITEM.create_item_from_array(item_data)
-					
-					# position item, add to map and lower loot potential
-					new_item.position = gm.map_to_local(Vector3(pos.x,5,pos.y))
+					var new_item = create_item_from_array(item_data)
+					# position item
+					var csx: float = gm.cell_size.x * 0.25
+					var csy: float = gm.cell_size.y * 0.25
+					var dx = rng.randf_range(-csx, csx)
+					var dy = rng.randf_range(-csy, csy)
+					var center = gm.map_to_local(Vector3(pos.x,0,pos.y))
+					var spawn_pos = center + Vector3(dx,1,dy)
+					new_item.position = spawn_pos
+					new_item.rotate_y(randf_range(0,PI))
+					# add to map and lower loot potential
 					gm.add_child(new_item)
 					var value = DATA.get_biome_item_value(biomes[quad_idx], item_idx).length()
 					quad_budget -= value
 					total_value += value
 					#printerr("spawned at ",pos," costing ", value)
-			
-			
 		#print("final budget for quad_", quad_idx,": ", quad_budget, "\n")
 	return total_value
 
+static func create_item_from_array(item_data: Array) -> RigidBody3D:
+	if item_data.size()-1 < ITEM_FIELDS.IS_LARGE or \
+					not (item_data[ITEM_FIELDS.NAME] is String \
+					and item_data[ITEM_FIELDS.MESH] is Object\
+					and item_data[ITEM_FIELDS.COLLIDER] is Object\
+					and item_data[ITEM_FIELDS.ICON] is Object\
+					and item_data[ITEM_FIELDS.VALUES] is Vector3\
+					and item_data[ITEM_FIELDS.IS_LARGE] is bool):
+		printerr("ERROR create_item_from_array(): item_data must be in the form of: 
+				[\"NAME\", preload(MESH), preload(COLLIDER), Vector3(VALUES), ImageTexture(ICON), IS_LARGE]")
+		printerr("item_data[NAME]: ", typeof(item_data[ITEM_FIELDS.NAME]),
+				"\ndata[MESH]: ", typeof(item_data[ITEM_FIELDS.MESH]), 
+				"\ndata[COLLIDER]: ", typeof(item_data[ITEM_FIELDS.COLLIDER]), 
+				"\ndata[ICON]: ", typeof(item_data[ITEM_FIELDS.ICON]), 
+				"\ndata[VALUES]:", typeof(item_data[ITEM_FIELDS.VALUES]),
+				"\ndata[IS_LARGE]:", typeof(item_data[ITEM_FIELDS.IS_LARGE]))
+		return null
+	
+	var new_item = RigidBody3D.new()
+	new_item.name = item_data[ITEM_FIELDS.NAME] + "_" + str(new_item.get_instance_id())
+	new_item.collision_layer = DATA.LAYERS.ITEM
+	new_item.collision_mask = DATA.LAYERS.PLAYER + DATA.LAYERS.MAP + DATA.LAYERS.ITEM
+	
+	var script: Script = item_data[ITEM_FIELDS.SCRIPT] if item_data.size()-1 >= ITEM_FIELDS.SCRIPT else preload("res://item/item.gd")
+	new_item.set_script(script)
+	
+	var ico = ImageTexture.create_from_image(item_data[ITEM_FIELDS.ICON])
+	new_item.icon = ico
+	new_item.values = item_data[ITEM_FIELDS.VALUES]
+	new_item.is_large = item_data[ITEM_FIELDS.IS_LARGE]
+	#if item_data.size()-1 >= ITEM_FIELDS.HAND_SCALE: new_item.hand_scale = item_data[ITEM_FIELDS.HAND_SCALE]
+	
+	var new_mesh := MeshInstance3D.new()
+	var new_collider := CollisionShape3D.new()
+	
+	new_mesh.name = "MESH"
+	new_collider.name = "COLLIDER"
+	
+	new_mesh.mesh = item_data[ITEM_FIELDS.MESH]
+	new_item.mesh = new_mesh
+	new_collider.shape = item_data[ITEM_FIELDS.COLLIDER]
+	
+	if item_data.size()-1 >= ITEM_FIELDS.HAND_SCALE:
+		new_mesh.scale = item_data[ITEM_FIELDS.HAND_SCALE]
+		new_collider.scale = item_data[ITEM_FIELDS.HAND_SCALE]
+	
+	new_item.add_to_group("item")
+	new_item.add_child(new_mesh)
+	new_item.add_child(new_collider)
 
+	return new_item
 
 enum SPAWN_TYPES {ENDS, CORNERS, JUNCTIONS}
 static func find_spawns_by_quadrant(descriptor: Array) -> Array:

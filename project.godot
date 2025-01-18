@@ -15,6 +15,10 @@ run/main_scene="res://Lost_Lands.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.png"
 
+[debug]
+
+settings/stdout/print_fps=true
+
 [layer_names]
 
 3d_physics/layer_1="INHABITANT"

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://b5141l03u10n"
+path="res://.godot/imported/bottle_icon.png-395547873142dc9dc77ec6051c176e1c.image"
+
+[deps]
+
+source_file="res://item/_resources/bottle/bottle_icon.png"
+dest_files=["res://.godot/imported/bottle_icon.png-395547873142dc9dc77ec6051c176e1c.image"]
+
+[params]
+

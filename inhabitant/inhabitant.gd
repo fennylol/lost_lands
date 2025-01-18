@@ -1,15 +1,15 @@
 extends CharacterBody3D
 
 
-var wish_dir := Vector3.ZERO
-var walk_speed := 7.0
-var sprint_speed := 8.5
-var ground_accel := 20.0
-var ground_decel := 7.0
-var ground_friction := 3.5
-var air_cap := 0.85 # Can surf steeper ramps if this is higher, makes it easier to stick and bhop
-var air_accel := 800.0
-var air_move_speed := 500.0
+@export var wish_dir := Vector3.ZERO
+#var walk_speed := 2.0
+#var sprint_speed := 8.5
+#var ground_accel := 20.0
+#var ground_decel := 7.0
+#var ground_friction := 3.5
+#var air_cap := 0.85 # Can surf steeper ramps if this is higher, makes it easier to stick and bhop
+#var air_accel := 800.0
+#var air_move_speed := 500.0
 const JUMP_VELOCITY := 6
 const PUSH_FORCE := 0.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -27,6 +27,8 @@ signal dead()
 var inventory: Array[Node] = [null,null,null,null]
 var inventory_slots: int = inventory.size()
 var active_slot: int = 0
+
+
 
 # ╭-----------╮
 # |   items   |
@@ -46,14 +48,16 @@ func drop_item(slot: int = active_slot):
 		get_tree().root.add_child(item)
 		item.freeze = false
 		item.collision_layer += DATA.LAYERS.ITEM
-		item.linear_velocity = velocity
-		item.position = to_global(Vector3(0,0,-1))
+		item.linear_velocity = velocity*1.3
+		item.angular_velocity = velocity*0.25
+		item.position = to_global(Vector3(0,0,0-1))
+		#item.set_mesh_scale()
 
 func pickup_item(item: RigidBody3D):
 	inventory[active_slot] = item
 	var rot = item.global_rotation
 	item.get_parent().remove_child(item)
-	
+	#item.set_mesh_scale(item.hand_scale)
 	item.position = Vector3.ZERO
 	item.freeze = true
 	item.collision_layer -= DATA.LAYERS.ITEM
@@ -80,20 +84,63 @@ func interact():
 				else: scroll()
 
 
-func scroll(up: bool = false, slot: int = -1):
+func scroll(up: bool = false, slot: int = -1) -> String:
+	if inventory[active_slot]: if inventory[active_slot].is_large: return "HANDS FULL"
 	if hands.get_child_count() > 1: hands.remove_child(inventory[active_slot])
 	if slot != -1: active_slot = slot
 	else:
 		var dir = 1-int(up)*2
 		active_slot = (active_slot+dir+inventory_slots)%inventory_slots
 	GUI.set_active_slot(active_slot)
-	if inventory[active_slot]: hands.add_child(inventory[active_slot])
+	if inventory[active_slot]: 
+		hands.add_child(inventory[active_slot])
+		return inventory[active_slot].name.split("_")[0]
+	return ""
 
-func rotate_inhabitant(amount: Vector2):
-	rotate_y(amount.x)
-	camera.rotate_x(amount.y)
-	camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
-	GUI.adjust_target_rotation(amount.x)
+
+
+
+
+# ╭------------╮
+# |   health   |
+# ╰------------╯
+func take_damage(dmg: float): 
+	set_health(health-dmg)
+
+
+
+func set_health(val: float):
+	health = val
+	health_changed.emit(health)
+	GUI.set_health(health)
+	if health <= 0: handle_death()
+
+func handle_death():
+	for i in inventory_slots: drop_item(i)
+	dead.emit()
+	queue_free()
+
+
+# ╭------------╮
+# |    gui     |
+# ╰------------╯
+func init_gui(map, cell_size):
+	show_gui(false)
+	GUI.set_minimap(await GUI.tilemap_to_image(map, true), cell_size)
+	GUI.update_minimap_display(0)
+	GUI.set_max_health(MAX_HEALTH)
+	GUI.set_health(health)
+
+# gui passthroughs
+func process_world_tick(time: Vector4i): GUI.rotate_clock(time)
+func new_player_color(): GUI.new_player_color()
+func show_gui(show_gui: bool = true): GUI.visible = show_gui
+func show_minimap(show_on_gui: bool = true): GUI.show_minimap(show_on_gui)
+func show_markers(show_on_gui: bool = true): GUI.show_markers(show_on_gui)
+func show_compass(show_on_gui: bool = true): GUI.show_compass(show_on_gui)
+func show_clock(show_on_gui: bool = true): GUI.show_clock(show_on_gui)
+func show_light(show_light: bool = true): $DEBUG_CAMERA/SpotLight3D.visible = show_light # not technically gui but whatever
+func get_markers() -> bool: return GUI.markers
 
 
 
@@ -121,10 +168,20 @@ func handle_inputs(input_dir: Vector2, jump: bool):
 	wish_dir = self.global_transform.basis * Vector3(input_dir.x, 0., input_dir.y)
 
 
+func rotate_inhabitant(amount: Vector2):
+	rotate_y(amount.x)
+	camera.rotate_x(amount.y)
+	camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
+	GUI.adjust_target_rotation(amount.x)
+
 func get_move_speed() -> float:
 	return sprint_speed if Input.is_action_pressed("sprint") else walk_speed
 
-
+var walk_speed := 7.0
+var sprint_speed := 8.5
+var ground_accel := 20.0
+var ground_decel := 7.0
+var ground_friction := 3.5
 func _handle_ground_physics(delta) -> void:
 	# Similar to the air movement. Acceleration and friction on ground.
 	var cur_speed_in_wish_dir = self.velocity.dot(wish_dir)
@@ -142,7 +199,9 @@ func _handle_ground_physics(delta) -> void:
 		new_speed /= self.velocity.length()
 	self.velocity *= new_speed
 
-
+@export var air_cap := 5 # Can surf steeper ramps if this is higher, makes it easier to stick and bhop
+@export var air_accel := 80.0
+@export var air_move_speed := 5
 func _handle_air_physics(delta) -> void:
 	self.velocity.y -= ProjectSettings.get_setting("physics/3d/default_gravity") * delta
 	
@@ -196,39 +255,3 @@ func clip_velocity(normal: Vector3, overbounce : float, _delta : float) -> void:
 
 
 
-
-# ╭------------╮
-# |   health   |
-# ╰------------╯
-func take_damage(dmg: float): 
-	set_health(health-dmg)
-
-
-func set_health(val: float):
-	health = val
-	health_changed.emit(health)
-	if health <= 0: handle_death()
-
-func handle_death():
-	dead.emit()
-	for item in inventory:
-		if item: item.queue_free()
-	queue_free()
-
-# ╭------------╮
-# |    gui     |
-# ╰------------╯
-func init_gui(map, cell_size):
-	show_gui(false)
-	GUI.set_minimap(await GUI.tilemap_to_image(map, true), cell_size)
-	GUI.update_minimap_display(0)
-
-# gui passthroughs
-func process_world_tick(time: Vector4i): GUI.rotate_clock(time)
-func new_player_color(): GUI.new_player_color()
-func show_gui(show_gui: bool = true): GUI.visible = show_gui
-func show_minimap(show_on_gui: bool = true): GUI.show_minimap(show_on_gui)
-func show_markers(show_on_gui: bool = true): GUI.show_markers(show_on_gui)
-func show_compass(show_on_gui: bool = true): GUI.show_compass(show_on_gui)
-func show_clock(show_on_gui: bool = true): GUI.show_clock(show_on_gui)
-func get_markers() -> bool: return GUI.markers

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cuxrvt4w3mw2j"
+path="res://.godot/imported/spoon_icon.png-d7e3403e3a35cd684974fb7a2735823b.image"
+
+[deps]
+
+source_file="res://item/_resources/spoon/spoon_icon.png"
+dest_files=["res://.godot/imported/spoon_icon.png-d7e3403e3a35cd684974fb7a2735823b.image"]
+
+[params]
+

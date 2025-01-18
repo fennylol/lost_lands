@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cfaguchifegis"
+path="res://.godot/imported/huge_burger_icon.png-52f5e2c1881d340e5318b49d5eaf2906.image"
+
+[deps]
+
+source_file="res://item/_resources/cheeseburger/huge_burger_icon.png"
+dest_files=["res://.godot/imported/huge_burger_icon.png-52f5e2c1881d340e5318b49d5eaf2906.image"]
+
+[params]
+

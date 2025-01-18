@@ -14,7 +14,6 @@ radius = 0.25
 
 [node name="Inhabitant" type="CharacterBody3D" groups=["inhabitant", "mortal"]]
 collision_mask = 7
-floor_max_angle = 3.14159
 script = ExtResource("1_52vjr")
 
 [node name="DEBUG_CAMERA" type="Camera3D" parent="."]
@@ -31,9 +30,10 @@ transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195
 shape = SubResource("CylinderShape3D_qa71u")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="DEBUG_CAMERA"]
-light_energy = 20.0
+visible = false
+light_energy = 10.0
+light_volumetric_fog_energy = 0.025
 spot_range = 30.04
-spot_attenuation = 2.37842
 spot_angle_attenuation = 3.5
 
 [node name="pill" type="MeshInstance3D" parent="."]
